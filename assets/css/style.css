@@ -931,6 +931,8 @@ main {
 
 .project-item.active {
   display: block;
+  max-height: 260px;
+  overflow: hidden;
   animation: scaleUp 0.25s ease forwards;
 }
 
