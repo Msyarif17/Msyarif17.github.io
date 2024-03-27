@@ -951,7 +951,10 @@ main {
   overflow: hidden;
   margin-bottom: 15px;
 }
-
+.max-height-260{
+  max-height: 260px;
+  object-fit: cover top;
+}
 .project-img::before {
   content: "";
   position: absolute;
