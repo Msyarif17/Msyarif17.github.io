@@ -1,0 +1,314 @@
+{
+  "personal_info": {
+    "name": "Muhammad Syarif Setiadi",
+    "title": "Fullstack Web developer",
+    "avatar": "./assets/images/my-avatar-2.jpg",
+    "contact": {
+      "email": "m.syarifsetiadi.freelancer@gmail.com",
+      "phone": "+6289662279662",
+      "birthday": "April 17, 2000",
+      "location": "Ciamis, West Java, Indonesia"
+    },
+    "social": [
+      {
+        "platform": "linkedin",
+        "link": "https://www.linkedin.com/in/muhammad-syarif-5a7b0820a/"
+      },
+      {
+        "platform": "whatsapp",
+        "link": "https://wa.me/6289662279662"
+      },
+      {
+        "platform": "instagram",
+        "link": "#"
+      }
+    ]
+  },
+  "about": {
+    "text": "Hello! I am a Fullstack Web Developer, I have developed skills and extensive experience in building attractive and functional web solutions with more than 5 years experience. With expertise in programming languages such as PHP, Python, Java ,HTML, CSS, JavaScript, as well as the use of frameworks such as Laravel, Lumen, Flask, Fast API, I have created intuitive and responsive web applications. I also have expertise in designing and managing databases using technologies such as MySQL, PostgreSQL. My portfolio spans a wide range of projects, from sophisticated e-commerce websites with payment features and third-party integrations, to interactive web applications that use APIs to retrieve data in real-time. I enjoy working in a collaborative team and always strive to provide the best and innovative solutions for clients and end users. With strong experience in web development, I am ready for new challenges and contribute to creating engaging and impactful web experiences for users."
+  },
+  "what_i_am_doing": [
+    {
+      "title": "Web design",
+      "description": "The most modern and high-quality design made at a professional level.",
+      "icon": "./assets/images/icon-design.svg"
+    },
+    {
+      "title": "Web development",
+      "description": "High-quality development of sites at the professional level.",
+      "icon": "./assets/images/icon-dev.svg"
+    },
+    {
+      "title": "Rest API",
+      "description": "Professional development of applications for iOS and Android.",
+      "icon": "./assets/images/api-logo.svg"
+    },
+    {
+      "title": "Game",
+      "description": "i like to play multi user games!.",
+      "icon": "./assets/images/gamepad.svg"
+    }
+  ],
+  "clients": [
+    {
+      "name": "Naturalva Herba Indonesia",
+      "link": "https://naturalvaherba.co.id",
+      "logo": "./assets/images/naturalva-herba-indonesia.png"
+    },
+    {
+      "name": "majoring in informatics engineering, Sunan Gunung Djati Islamic University Bandung",
+      "link": "https://if.uinsgd.ac.id",
+      "logo": "./assets/images/teknik-informatika-uin.png"
+    },
+    {
+      "name": "Joint Research Project",
+      "link": "http://194.233.91.96:8383/",
+      "logo": "./assets/images/tamam.png"
+    },
+    {
+      "name": "Dinas Ketenaga Kerjaan Ciamis",
+      "link": "https://disnaker.ciamiskab.go.id/",
+      "logo": "./assets/images/disnaker.png"
+    },
+    {
+      "name": "digitiket",
+      "link": "https://digitiket.com/",
+      "logo": "./assets/images/digitiket.png"
+    }
+  ],
+  "resume": {
+    "education": [
+      {
+        "school": "State Islamic University of Sunan Gunung Djati Bandung",
+        "years": "2019 — 2025",
+        "description": "majored in Informatics Engineering."
+      },
+      {
+        "school": "Madrasah Aliyah Negeri 2 Ciamis",
+        "years": "2016 — 2019",
+        "description": "studying science majors"
+      },
+      {
+        "school": "Madrasah Tsanawiyah Negeri 1 Cijeungjing",
+        "years": "2013 — 2016",
+        "description": null
+      }
+    ],
+    "experience": [
+      {
+        "position": "Fullstack Web Developer",
+        "company": "PT Naturalva Herba Indonesia",
+        "years": "2023 - 2025",
+        "description": "As a Full Stack Developer at PT Naturalva Herba Indonesia, I was responsible for designing, developing, and maintaining various web-based systems to support business operations. My portfolio includes building a centralized marketplace management system, developing the SICIVA application for inventory and distribution, and creating the Main Dashboard for real-time sales analytics using Laravel and PostgreSQL. I also integrated third-party APIs for e-commerce platforms, managed infrastructure with a DevOps approach, and ensured system scalability and security. These projects enhanced my skills in backend and frontend development, API integration, and cloud server management, contributing to the company's digital transformation and operational efficiency."
+      },
+      {
+        "position": "Fullstack Web Developer",
+        "company": "Web Profile Informatics Engineering",
+        "years": "2023",
+        "description": "While involved in the Informatics Engineering Web Profile project at UIN Sunan Gunung Djati Bandung, I have had extraordinary experiences. In this project, I contributed to the development of a website featuring information about our course, faculty, and teaching staff. I am involved in designing layouts, implementing interactive features, and optimizing website performance. During this process, I learned a lot about web development, teamwork and effective communication with other team members. This experience has enhanced my understanding of informatics engineering and given me the confidence to face future web development challenges."
+      },
+      {
+        "position": "Frontend Developer",
+        "company": "Tamam",
+        "years": "2023",
+        "description": "While participating in Tamam's Web Game project, I have had an interesting and satisfying adventure. From the planning phase to implementation, I was involved in every stage of the game's development. I work alongside a talented and dedicated team, who helped me learn a lot about game design, coding and project management. On this journey, I faced challenges that fueled my creative and problem-solving abilities. With solid teamwork, we have succeeded in creating an interesting and entertaining game, and seeing the positive response from users is the biggest reward for our hard work. This experience has broadened my horizons and skills in the field of web game development, and I look forward to being involved in similar projects in the future."
+      },
+      {
+        "position": "Backend Developer",
+        "company": "Digitiket.com",
+        "years": "2022",
+        "description": "While involved in the Digitiket e-commerce Restful API project, I have had a great experience. In this project, I'm responsible for designing and developing an API that enables seamless interaction between e-commerce applications and backend systems. I collaborate with a dedicated and experienced team, and work with various technologies and frameworks such as Lumen, and MySQL. I was involved in implementing key features such as user management, scheduling and ticket management, and payment integration. During this process, I successfully faced technical challenges and gained a deeper understanding of API architecture and good development practices. This experience has enhanced my skills in Restful API development and provided a solid foundation for the development of reliable and efficient e-commerce systems in the future."
+      },
+      {
+        "position": "Web Developer",
+        "company": "Dinas Ketenaga Kerjaan Ciamis",
+        "years": "2021",
+        "description": "Selama terlibat dalam proyek pengembangan website Dinas Ketenagakerjaan Ciamis, saya memiliki pengalaman yang luar biasa. Dalam perjalanan ini, saya mendapatkan kesempatan untuk bekerja dengan tim yang berdedikasi dan profesional, yang membantu saya memperluas pengetahuan dan keterampilan dalam bidang pengembangan web. Saya terlibat dalam merancang tata letak yang intuitif dan responsif, mengimplementasikan fitur-fitur yang diperlukan, serta melakukan uji coba dan pemeliharaan untuk memastikan kualitas dan kinerja yang optimal. Selama proses ini, saya juga belajar beradaptasi dengan perubahan dan tantangan yang muncul, serta bekerja sama dengan pihak Dinas Ketenagakerjaan Ciamis untuk memastikan website memenuhi kebutuhan dan harapan mereka. Secara keseluruhan, pengalaman saya di proyek ini telah memperkaya pemahaman saya tentang pengembangan web dan memberi saya kepuasan yang besar karena telah berkontribusi dalam meningkatkan akses informasi dan pelayanan kepada masyarakat terkait ketenagakerjaan."
+      }
+    ]
+  },
+  "skills": [
+    {
+      "name": "PHP",
+      "proficiency": "90%"
+    },
+    {
+      "name": "Python",
+      "proficiency": "70%"
+    },
+    {
+      "name": "JavaScript",
+      "proficiency": "70%"
+    },
+    {
+      "name": "Laravel",
+      "proficiency": "98%"
+    },
+    {
+      "name": "Lumen",
+      "proficiency": "78%"
+    },
+    {
+      "name": "CodeIgniter",
+      "proficiency": "54%"
+    },
+    {
+      "name": "PostgreSQL",
+      "proficiency": "70%"
+    },
+    {
+      "name": "MySQL",
+      "proficiency": "80%"
+    }
+  ],
+  "portfolio": {
+    "categories": [
+      "All",
+      "Web design",
+      "Applications",
+      "Web development"
+    ],
+    "projects": [
+      {
+        "title": "Web Profile - Informatics Engineering",
+        "category": "Web development",
+        "image": "./assets/portofolio/if-uinsgd.jpg",
+        "link": "https://if.uinsgd.ac.id/"
+      },
+      {
+        "title": "Tamam",
+        "category": "Web development",
+        "image": "./assets/portofolio/tamam.jpg",
+        "link": "http://194.233.91.96:8383/"
+      },
+      {
+        "title": "Webinar Informatka",
+        "category": "Web development",
+        "image": "./assets/portofolio/webinar.jpg",
+        "link": "#"
+      },
+      {
+        "title": "Tokoku App",
+        "category": "Applications",
+        "image": "./assets/portofolio/tokoku.jpg",
+        "link": "#"
+      },
+      {
+        "title": "SICIVA",
+        "category": "Applications",
+        "image": "./assets/portofolio/naturalva.png",
+        "link": "https://siciva.naturalva.co.id"
+      },
+      {
+        "title": "App Naturalva",
+        "category": "Applications",
+        "image": "./assets/portofolio/naturalva2.png",
+        "link": "https://app.naturalva.co.id"
+      },
+      {
+        "title": "Main Dashboard",
+        "category": "Applications",
+        "image": "./assets/portofolio/naturalva2.png",
+        "link": "https://main.naturalva.co.id"
+      },
+      {
+        "title": "Company Profile PT Nutrahasiat International",
+        "category": "Applications",
+        "image": "./assets/portofolio/nutrahasiat.png",
+        "link": "https://nutrahasiat.co.id"
+      },
+      {
+        "title": "Marketplace Management Data System",
+        "category": "Applications",
+        "image": "./assets/portofolio/app.naturalva.co.id.png",
+        "link": "https://app.naturalva.co.id"
+      },
+      {
+        "title": "Form TikTok",
+        "category": "Applications",
+        "image": "./assets/portofolio/form tiktok.png",
+        "link": "https://noc.nhi.co.id/form/tiktok"
+      },
+      {
+        "title": "GitHub",
+        "category": "Applications",
+        "image": "./assets/portofolio/github.png",
+        "link": "https://github.com/msyarif17"
+      },
+      {
+        "title": "Management Server",
+        "category": "Applications",
+        "image": "./assets/portofolio/management server.png",
+        "link": "https://console.idcloudhost.com/"
+      },
+      {
+        "title": "Natcare Dashboard (Microservices)",
+        "category": "Applications",
+        "image": "./assets/portofolio/natcare dashboard.png",
+        "link": "https://natcare.naturalva.co.id"
+      },
+      {
+        "title": "Natcare Login",
+        "category": "Applications",
+        "image": "./assets/portofolio/natcare login.png",
+        "link": "https://natcare.naturalva.co.id"
+      },
+      {
+        "title": "Natcare",
+        "category": "Applications",
+        "image": "./assets/portofolio/natcare.png",
+        "link": "https://natcare.naturalva.co.id"
+      },
+      {
+        "title": "NOC",
+        "category": "Applications",
+        "image": "./assets/portofolio/noc.png",
+        "link": "https://noc.nhi.co.id"
+      },
+      {
+        "title": "Simalva Login",
+        "category": "Applications",
+        "image": "./assets/portofolio/simalva login.png",
+        "link": "https://simalva.naturalva.co.id"
+      },
+      {
+        "title": "Sistem Management Ads (Tiktok,Google,Facebook)",
+        "category": "Applications",
+        "image": "./assets/portofolio/simalva.co.id.png",
+        "link": "https://simalva.naturalva.co.id"
+      },
+      {
+        "title": "naturalvaherba.co.id",
+        "category": "Applications",
+        "image": "./assets/portofolio/naturalvaherba.co.id.png",
+        "link": "https://naturalvaherba.co.id"
+      },
+      {
+        "title": "naic.nhi.co.id",
+        "category": "Applications",
+        "image": "./assets/portofolio/naic.png",
+        "link": "https://naic.nhi.co.id"
+      }
+    ]
+  },
+  "blog": [
+    {
+      "title": "Design conferences in 2022",
+      "category": "Design",
+      "date": "Fab 23, 2022",
+      "text": "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
+      "image": "./assets/images/blog-1.jpg"
+    }
+    
+  ],
+  "contact_form": {
+    "map_link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63315.58197519798!2d108.30005289397754!3d-7.328734395968094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f5e82ef269cdf%3A0x401e8f1fc28e1b0!2sCiamis%2C%20Kec.%20Ciamis%2C%20Kabupaten%20Ciamis%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1689417398571!5m2!1sid!2sid",
+    "form_action": "#",
+    "inputs": [
+      "fullname",
+      "email",
+      "message"
+    ],
+    "form_btn_text": "Send Message"
+  }
+}
