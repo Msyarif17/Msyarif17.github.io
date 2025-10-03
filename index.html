@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://msyarif17.github.io/">
     <meta property="og:site_name" content="Muhammad Syarif Setiadi Portfolio">
     <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://msyarif17.github.io/website-demo-image/desktop.png">
+    <meta property="og:image" content="https://msyarif17.github.io/website-demo-image/cuplikan.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Muhammad Syarif Setiadi - Fullstack Web Developer">
     <meta name="twitter:description" content="See how Muhammad Syarif Setiadi delivers Laravel, Tailwind, and JavaScript solutions for businesses and teams.">
-    <meta name="twitter:image" content="https://msyarif17.github.io/website-demo-image/desktop.png">
+    <meta name="twitter:image" content="https://msyarif17.github.io/website-demo-image/cuplikan.png">
 
         <script type="application/ld+json">
         {
@@ -2677,8 +2677,30 @@
     <!-- Flowbite JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
     
+    <!-- Visitor Tracker -->
+    <script src="visitor-tracker.js"></script>
+    <script src="visitor-stats-display.js"></script>
+    
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
+    
+    <!-- Initialize Visitor Tracking -->
+    <script>
+        // Initialize visitor tracking
+        window.visitorTracker = new VisitorTracker();
+        window.visitorStatsDisplay = new VisitorStatsDisplay(window.visitorTracker);
+        
+        // Start tracking when DOM is ready
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Initialize stats display
+            window.visitorStatsDisplay.init();
+            
+            // Track visitor
+            await window.visitorTracker.init();
+            
+            console.log('📊 Visitor tracking initialized');
+        });
+    </script>
     
     <!-- Initialize Lucide Icons -->
     <script>

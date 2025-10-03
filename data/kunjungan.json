@@ -1,0 +1,13 @@
+{
+  "totalVisits": 0,
+  "uniqueVisitors": 0,
+  "visitors": [],
+  "lastUpdated": "2025-10-03T00:00:00.000Z",
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Visitor tracking data for portfolio website",
+    "createdAt": "2025-10-03T00:00:00.000Z",
+    "trackingMethod": "localStorage + IP API",
+    "privacyNote": "Data stored locally in browser and anonymized"
+  }
+}
