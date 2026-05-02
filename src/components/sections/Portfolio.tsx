@@ -238,7 +238,7 @@ export default function Portfolio({ data }: PortfolioProps) {
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
           <motion.div
-            className="relative w-[80vw] h-[80vh] portfolio-dialog overflow-hidden rounded-2xl grid grid-cols-[8fr_4fr]"
+            className="relative w-[92vw] h-[85vh] sm:w-[80vw] sm:h-[80vh] portfolio-dialog overflow-hidden rounded-2xl flex flex-col sm:grid sm:grid-cols-[8fr_4fr]"
             initial={{ scale: 0.88, opacity: 0, y: 24 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.88, opacity: 0, y: 24 }}
@@ -252,7 +252,7 @@ export default function Portfolio({ data }: PortfolioProps) {
               <X className="w-4 h-4" />
             </button>
 
-            <div className="relative bg-white/5 overflow-hidden">
+            <div className="relative bg-white/5 overflow-hidden h-48 sm:h-auto shrink-0">
               <img
                 src={assetPath(selected.image)}
                 alt={selected.title}
@@ -261,7 +261,7 @@ export default function Portfolio({ data }: PortfolioProps) {
               />
             </div>
 
-            <div className="p-6 space-y-4 flex flex-col justify-center overflow-y-auto">
+            <div className="p-5 sm:p-6 space-y-4 flex flex-col justify-center overflow-y-auto flex-1">
               <div className="flex items-start justify-between gap-3 pr-8">
                 <h3 className="font-black text-white text-lg leading-tight">{selected.title}</h3>
                 <span className="shrink-0 px-2.5 py-1 rounded-full bg-white/8 text-[10px] font-semibold text-gray-400 capitalize border border-white/10 mt-0.5">
