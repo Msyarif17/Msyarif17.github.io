@@ -238,7 +238,7 @@ export default function Portfolio({ data }: PortfolioProps) {
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
           <motion.div
-            className="relative w-[92vw] h-[85vh] sm:w-[80vw] sm:h-[80vh] portfolio-dialog overflow-hidden rounded-2xl flex flex-col sm:grid sm:grid-cols-[8fr_4fr]"
+            className="relative w-[92vw] sm:w-[80vw] sm:h-[80vh] portfolio-dialog overflow-hidden rounded-2xl flex flex-col sm:grid sm:grid-cols-[8fr_4fr]"
             initial={{ scale: 0.88, opacity: 0, y: 24 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.88, opacity: 0, y: 24 }}
