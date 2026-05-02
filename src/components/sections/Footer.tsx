@@ -41,7 +41,7 @@ export default function Footer({ data }: FooterProps) {
                 <Code2 className="w-4 h-4 text-white" />
               </div>
               <span className="font-extrabold text-lg text-white tracking-tight">
-                {personal_info.name.split(" ")[0]}
+                M SYARIF
                 <span className="text-red-400">.</span>
               </span>
             </div>
