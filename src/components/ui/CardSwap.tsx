@@ -3,7 +3,6 @@
 import React, {
   Children,
   cloneElement,
-  forwardRef,
   isValidElement,
   useEffect,
   useMemo,
@@ -14,17 +13,18 @@ import "./CardSwap.css"
 
 type CardProps = React.HTMLAttributes<HTMLDivElement> & {
   customClass?: string
+  ref?: React.Ref<HTMLDivElement>
 }
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ customClass, className, ...rest }, ref) => (
+export function Card({ customClass, className, ref, ...rest }: CardProps) {
+  return (
     <div
       ref={ref}
       {...rest}
       className={["card", customClass, className].filter(Boolean).join(" ")}
     />
   )
-)
+}
 Card.displayName = "Card"
 
 interface EasingConfig {
