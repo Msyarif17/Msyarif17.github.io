@@ -35,7 +35,7 @@ export default function Hero({ data }: HeroProps) {
   }
 
   return (
-    <section id="home" className="relative overflow-hidden min-h-screen flex items-center">
+    <section id="home" className="relative overflow-hidden min-h-screen flex items-center bg-white dark:bg-black">
       <div className="absolute inset-0 z-0 pointer-events-none">
         <MagicRings
           color="#FF2D20"
@@ -58,10 +58,10 @@ export default function Hero({ data }: HeroProps) {
           parallax={0.03}
           clickBurst={true}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/90 dark:to-black/90" />
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
         <div className="grid lg:grid-cols-[1fr_auto] gap-16 items-center">
 
           <motion.div

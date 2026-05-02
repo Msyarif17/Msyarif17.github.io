@@ -44,24 +44,46 @@
   },
   "what_i_am_doing": [
     {
-      "title": "Web design",
-      "description": "The most modern and high-quality design made at a professional level.",
-      "icon": "./assets/images/icon-design.svg"
+      "title": "UI/UX Design",
+      "description": "Merancang antarmuka yang modern, intuitif, dan berorientasi pada pengguna dari wireframe hingga prototype siap produksi.",
+      "icon": "./assets/images/services/figma.svg",
+      "tags": ["Figma", "Responsive", "Prototyping"],
+      "features": ["Wireframe & mockup", "Responsive di semua perangkat", "Design system & komponen"]
     },
     {
-      "title": "Web development",
-      "description": "High-quality development of sites at the professional level.",
-      "icon": "./assets/images/icon-dev.svg"
+      "title": "Frontend Development",
+      "description": "Membangun UI yang cepat, interaktif, dan pixel-perfect menggunakan React, Next.js, dan Tailwind CSS.",
+      "icon": "./assets/images/services/react.svg",
+      "tags": ["React", "Next.js", "Tailwind"],
+      "features": ["SPA & SSR/SSG", "Animasi & transisi halus", "Performa & aksesibilitas"]
     },
     {
-      "title": "Rest API",
-      "description": "Professional development of applications for iOS and Android.",
-      "icon": "./assets/images/api-logo.svg"
+      "title": "Backend Development",
+      "description": "Membangun sistem backend yang scalable, aman, dan efisien menggunakan Laravel, Lumen, dan CodeIgniter.",
+      "icon": "./assets/images/services/laravel.svg",
+      "tags": ["Laravel", "Lumen", "CodeIgniter"],
+      "features": ["Arsitektur MVC & service layer", "Autentikasi & otorisasi", "Query efisien & anti N+1"]
     },
     {
-      "title": "Game",
-      "description": "i like to play multi user games!.",
-      "icon": "./assets/images/gamepad.svg"
+      "title": "REST API & Integrasi",
+      "description": "Desain dan pengembangan REST API yang aman, terdokumentasi, dan siap diintegrasikan dengan sistem pihak ketiga.",
+      "icon": "./assets/images/services/postman.svg",
+      "tags": ["RESTful", "JWT", "Webhook"],
+      "features": ["Endpoint aman & terstruktur", "Integrasi payment gateway", "Webhook & event-driven"]
+    },
+    {
+      "title": "Database & Optimasi",
+      "description": "Perancangan skema database, optimasi query, dan pengelolaan data untuk aplikasi berskala besar.",
+      "icon": "./assets/images/services/postgresql.svg",
+      "tags": ["PostgreSQL", "MySQL", "Redis"],
+      "features": ["Skema relasional & normalisasi", "Optimasi query & indeks", "Caching & performa"]
+    },
+    {
+      "title": "DevOps & Server",
+      "description": "Pengelolaan server, deployment CI/CD, konfigurasi VPS/cloud, dan monitoring untuk aplikasi production.",
+      "icon": "./assets/images/services/docker.svg",
+      "tags": ["Linux", "Nginx", "Docker"],
+      "features": ["Setup VPS & konfigurasi Nginx", "CI/CD pipeline & deployment", "SSL, firewall & monitoring"]
     }
   ],
   "clients": [
@@ -143,38 +165,14 @@
     ]
   },
   "skills": [
-    {
-      "name": "PHP",
-      "proficiency": "90%"
-    },
-    {
-      "name": "Python",
-      "proficiency": "70%"
-    },
-    {
-      "name": "JavaScript",
-      "proficiency": "70%"
-    },
-    {
-      "name": "Laravel",
-      "proficiency": "98%"
-    },
-    {
-      "name": "Lumen",
-      "proficiency": "78%"
-    },
-    {
-      "name": "CodeIgniter",
-      "proficiency": "54%"
-    },
-    {
-      "name": "PostgreSQL",
-      "proficiency": "70%"
-    },
-    {
-      "name": "MySQL",
-      "proficiency": "80%"
-    }
+    { "name": "PHP", "proficiency": "97%", "logo": "/assets/images/skills/php.svg" },
+    { "name": "Python", "proficiency": "91%", "logo": "/assets/images/skills/python.svg" },
+    { "name": "JavaScript", "proficiency": "93%", "logo": "/assets/images/skills/javascript.svg" },
+    { "name": "Laravel", "proficiency": "98%", "logo": "/assets/images/skills/laravel.svg" },
+    { "name": "Lumen", "proficiency": "94%", "logo": "/assets/images/skills/lumen.svg" },
+    { "name": "CodeIgniter", "proficiency": "90%", "logo": "/assets/images/skills/codeigniter.svg" },
+    { "name": "PostgreSQL", "proficiency": "92%", "logo": "/assets/images/skills/postgresql.svg" },
+    { "name": "MySQL", "proficiency": "96%", "logo": "/assets/images/skills/mysql.svg" }
   ],
   "hero": {
     "tagline": "Available for freelance",

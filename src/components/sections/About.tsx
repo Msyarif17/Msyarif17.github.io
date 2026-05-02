@@ -1,7 +1,8 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { MapPin, Phone, Mail, Calendar, Code2, Zap, Users, Lightbulb, Rocket, Coffee } from "lucide-react"
+import { MapPin, Phone, Mail, Cake, Code2, Zap, Users, Lightbulb, Rocket, Coffee, ChevronDown, ChevronUp } from "lucide-react"
 import type { PortfolioJSON } from "@/types/portfolio"
 
 const passionIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -23,10 +24,19 @@ interface AboutProps {
 
 export default function About({ data }: AboutProps) {
   const { about, personal_info } = data
+  const [expanded, setExpanded] = useState(false)
+
+  const age = (() => {
+    const birth = new Date(personal_info.contact.birthday)
+    const today = new Date()
+    let a = today.getFullYear() - birth.getFullYear()
+    if (today < new Date(today.getFullYear(), birth.getMonth(), birth.getDate())) a--
+    return a
+  })()
 
   return (
-    <section id="about" className="py-28 relative">
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 relative">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -91,7 +101,20 @@ export default function About({ data }: AboutProps) {
             transition={{ duration: 0.6 }}
             className="space-y-8 pt-2"
           >
-            <p className="text-gray-300 text-lg leading-relaxed">{about.text}</p>
+            <div className="space-y-3">
+              <p className={`text-gray-300 text-lg leading-relaxed ${!expanded ? "line-clamp-3" : ""}`}>
+                {about.text}
+              </p>
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#FF2D20] hover:text-orange-400 transition-colors cursor-pointer"
+              >
+                <span className="border-b border-[#FF2D20]/40 group-hover:border-orange-400/40 pb-px transition-colors">
+                  {expanded ? "Read less" : "Read more"}
+                </span>
+                {expanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+              </button>
+            </div>
 
             <div className="space-y-3">
               <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Personal Info</h3>
@@ -99,7 +122,7 @@ export default function About({ data }: AboutProps) {
                 <InfoRow icon={MapPin} label="Location">{personal_info.contact.location}</InfoRow>
                 <InfoRow icon={Mail} label="Email">{personal_info.contact.email}</InfoRow>
                 <InfoRow icon={Phone} label="Phone">{personal_info.contact.phone}</InfoRow>
-                <InfoRow icon={Calendar} label="Birthday">{personal_info.contact.birthday}</InfoRow>
+                <InfoRow icon={Cake} label="Age">{age} years old</InfoRow>
                 <InfoRow icon={Zap} label="Freelance">
                   <span className="text-[#FF2D20] font-semibold">{about.freelance_status}</span>
                 </InfoRow>

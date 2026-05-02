@@ -32,8 +32,8 @@ export default function Footer({ data }: FooterProps) {
   }
 
   return (
-    <footer className="relative border-t border-white/8 pt-16 pb-8">
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative border-t border-white/8 pt-16 pb-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
           <div className="space-y-4">
             <div className="flex items-center gap-2">

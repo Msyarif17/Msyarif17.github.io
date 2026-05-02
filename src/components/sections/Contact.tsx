@@ -23,8 +23,8 @@ export default function Contact({ data }: ContactProps) {
   }
 
   return (
-    <section id="contact" className="py-28 relative">
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-16 relative">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

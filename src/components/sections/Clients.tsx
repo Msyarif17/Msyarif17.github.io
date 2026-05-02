@@ -18,8 +18,16 @@ export default function Clients({ data }: ClientsProps) {
   const logos: LogoItem[] = data.clients.map((client) =>
     client.logo
       ? {
-          src: assetPath(client.logo),
-          alt: client.name,
+          node: (
+            <img
+              src={assetPath(client.logo)}
+              alt={client.name}
+              title={client.name}
+              className="h-14 w-14 rounded-xl object-cover border border-white/10"
+              loading="lazy"
+              draggable={false}
+            />
+          ),
           title: client.name,
           href: client.link ?? undefined,
         }
@@ -35,8 +43,8 @@ export default function Clients({ data }: ClientsProps) {
   )
 
   return (
-    <section id="clients" className="py-20 relative">
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="clients" className="py-12 relative">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +59,7 @@ export default function Clients({ data }: ClientsProps) {
           </span>
           <h2 className="text-3xl sm:text-4xl font-black tracking-tight">
             Trusted By
-            <span className="text-white/30"> Amazing People</span>
+            <span className="text-white/30"> Amazing Clients</span>
           </h2>
         </motion.div>
 

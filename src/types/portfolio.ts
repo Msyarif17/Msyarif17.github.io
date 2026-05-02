@@ -41,6 +41,8 @@ export interface Service {
   title: string
   description: string
   icon: string
+  tags?: string[]
+  features?: string[]
 }
 
 export interface ServiceCategory {
@@ -103,6 +105,7 @@ export interface Resume {
 export interface Skill {
   name: string
   proficiency: string
+  logo?: string
 }
 
 export interface Achievement {

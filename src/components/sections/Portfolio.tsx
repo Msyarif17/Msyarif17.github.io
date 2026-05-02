@@ -30,8 +30,8 @@ export default function Portfolio({ data }: PortfolioProps) {
 
   return (
     <>
-    <section id="portfolio" className="py-28 relative overflow-hidden">
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="py-16 relative overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Row 1 — Hero card with CardSwap */}
         <div className="glass rounded-3xl border border-white/8 overflow-hidden mb-10">
@@ -82,7 +82,6 @@ export default function Portfolio({ data }: PortfolioProps) {
                 cardDistance={52}
                 verticalDistance={60}
                 delay={3500}
-                pauseOnHover
               >
                 {featured.map((project, i) => (
                   <Card

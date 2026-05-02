@@ -177,9 +177,7 @@
 }
 
 .bg-animated {
-  background: linear-gradient(-45deg, #0c0a09, #110d0c, #0f0b0a, #120e0d);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  background: #000000;
 }
 
 @keyframes gradientShift {
@@ -208,13 +206,16 @@
 .animate-spin-slow { animation: spinSlow 12s linear infinite; }
 
 html:not(.dark) body {
-  background-color: #fdf8f6;
+  background-color: #ffffff;
   color: #111827;
 }
 
+html:not(.dark) .logoloop {
+  --logoloop-fadeColorAuto: #f2f2f2;
+}
+
 html:not(.dark) .bg-animated {
-  background: linear-gradient(-45deg, #fdf8f6, #faf3f0, #fdf0ed, #faf5f3);
-  background-size: 400% 400%;
+  background: #ffffff;
 }
 
 html:not(.dark) .glass {

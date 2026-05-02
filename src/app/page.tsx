@@ -16,14 +16,7 @@ const data = portfolioData as unknown as PortfolioJSON
 
 export default function Home() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
-        <div className="absolute top-[3%] right-[5%] w-[700px] h-[700px] bg-[#FF2D20]/8 rounded-full blur-[160px]" />
-        <div className="absolute top-[22%] left-[2%] w-[600px] h-[600px] bg-orange-500/7 rounded-full blur-[150px]" />
-        <div className="absolute top-[45%] right-[3%] w-[650px] h-[650px] bg-[#FF2D20]/6 rounded-full blur-[170px]" />
-        <div className="absolute top-[68%] left-[6%] w-[550px] h-[550px] bg-amber-500/5 rounded-full blur-[150px]" />
-        <div className="absolute top-[88%] right-[8%] w-[500px] h-[500px] bg-[#FF2D20]/5 rounded-full blur-[140px]" />
-      </div>
+    <div className="min-h-screen text-white overflow-x-hidden relative bg-white dark:bg-black">
       <Navbar />
       <main>
         <Hero data={data} />
@@ -33,7 +26,7 @@ export default function Home() {
         <Resume data={data} />
         <Skills data={data} />
         <Portfolio data={data} />
-        <Blog data={data} />
+        {/* <Blog data={data} /> */}
         <Contact data={data} />
       </main>
       <Footer data={data} />
