@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
+import { BlurFade } from "@/components/ui/blur-fade"
 import type { PortfolioJSON } from "@/types/portfolio"
 
 function assetPath(path: string) {
@@ -18,10 +19,12 @@ export default function Services({ data }: ServicesProps) {
       <div className="site-container">
         <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <p className="eyebrow mb-4">Layanan</p>
-            <h2 className="section-title">Keahlian yang terhubung dari hulu ke hilir.</h2>
+            <BlurFade inView>
+              <p className="eyebrow mb-4">Layanan</p>
+              <h2 className="section-title">Keahlian yang terhubung dari hulu ke hilir.</h2>
+            </BlurFade>
           </div>
-          <div className="lg:pt-3">
+          <BlurFade inView delay={0.08} className="lg:pt-3">
             <p className="section-copy">
               Dari product interface hingga infrastruktur production, setiap keputusan teknis diarahkan untuk menghasilkan sistem yang jelas, stabil, dan mudah dikembangkan.
             </p>
@@ -82,7 +85,7 @@ export default function Services({ data }: ServicesProps) {
                 </article>
               ))}
             </div>
-          </div>
+          </BlurFade>
         </div>
       </div>
     </section>

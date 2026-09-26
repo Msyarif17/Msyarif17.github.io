@@ -1,4 +1,5 @@
 import { Cake, Mail, MapPin, Phone } from "lucide-react"
+import { BlurFade } from "@/components/ui/blur-fade"
 import type { PortfolioJSON } from "@/types/portfolio"
 
 interface AboutProps {
@@ -24,7 +25,7 @@ export default function About({ data }: AboutProps) {
   return (
     <section id="about" className="section-block border-b border-border">
       <div className="site-container">
-        <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <BlurFade inView className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
           <div>
             <p className="eyebrow mb-4">Tentang</p>
             <h2 className="section-title">Di balik setiap sistem yang berjalan.</h2>
@@ -33,9 +34,9 @@ export default function About({ data }: AboutProps) {
           <div className="lg:pt-3">
             <p className="section-copy">{about.text}</p>
           </div>
-        </div>
+        </BlurFade>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-20">
+        <BlurFade inView delay={0.08} className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-20">
           <div>
             <h3 className="text-sm font-semibold">Informasi Profesional</h3>
             <dl className="mt-4 divide-y divide-border border-y border-border">
@@ -65,7 +66,7 @@ export default function About({ data }: AboutProps) {
               ))}
             </ul>
           </div>
-        </div>
+        </BlurFade>
       </div>
     </section>
   )

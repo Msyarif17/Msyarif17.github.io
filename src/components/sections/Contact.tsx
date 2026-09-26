@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ArrowUpRight, Mail, MapPin, Phone, Send } from "lucide-react"
+import { BlurFade } from "@/components/ui/blur-fade"
 import type { PortfolioJSON } from "@/types/portfolio"
 
 interface ContactProps {
@@ -23,7 +24,7 @@ export default function Contact({ data }: ContactProps) {
     <section id="contact" className="section-block">
       <div className="site-container">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-          <div>
+          <BlurFade inView>
             <p className="eyebrow mb-4">Kontak</p>
             <h2 className="section-title">Mari bicarakan sistem berikutnya.</h2>
             <p className="section-copy mt-6">
@@ -73,76 +74,78 @@ export default function Contact({ data }: ContactProps) {
                 title="Peta lokasi Ciamis"
               />
             </div>
-          </div>
+          </BlurFade>
 
-          <form onSubmit={handleSubmit} className="surface self-start rounded-xl p-6 sm:p-8">
-            <div className="grid gap-6">
-              <div>
-                <label htmlFor="contact-name" className="mb-2 block text-sm font-semibold">
-                  Nama Lengkap
-                </label>
-                <input
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  autoComplete="name"
-                  required
-                  value={form.fullname}
-                  onChange={(event) => setForm({ ...form, fullname: event.target.value })}
-                  placeholder="Contoh: Budi Santoso…"
-                  className="focus-ring min-h-12 w-full rounded-lg border border-input bg-background px-4 text-sm placeholder:text-muted-foreground"
-                />
+          <BlurFade inView delay={0.08} className="self-start">
+            <form onSubmit={handleSubmit} className="surface rounded-xl p-6 sm:p-8">
+              <div className="grid gap-6">
+                <div>
+                  <label htmlFor="contact-name" className="mb-2 block text-sm font-semibold">
+                    Nama Lengkap
+                  </label>
+                  <input
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    autoComplete="name"
+                    required
+                    value={form.fullname}
+                    onChange={(event) => setForm({ ...form, fullname: event.target.value })}
+                    placeholder="Contoh: Budi Santoso…"
+                    className="focus-ring min-h-12 w-full rounded-lg border border-input bg-background px-4 text-sm placeholder:text-muted-foreground"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="contact-email" className="mb-2 block text-sm font-semibold">
+                    Email
+                  </label>
+                  <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    inputMode="email"
+                    autoComplete="email"
+                    spellCheck={false}
+                    required
+                    value={form.email}
+                    onChange={(event) => setForm({ ...form, email: event.target.value })}
+                    placeholder="nama@perusahaan.com…"
+                    className="focus-ring min-h-12 w-full rounded-lg border border-input bg-background px-4 text-sm placeholder:text-muted-foreground"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="contact-message" className="mb-2 block text-sm font-semibold">
+                    Kebutuhan Proyek
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows={8}
+                    autoComplete="off"
+                    required
+                    value={form.message}
+                    onChange={(event) => setForm({ ...form, message: event.target.value })}
+                    placeholder="Ceritakan masalah, target, dan ruang lingkup proyek…"
+                    className="focus-ring w-full resize-y rounded-lg border border-input bg-background px-4 py-3 text-sm placeholder:text-muted-foreground"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  aria-describedby="email-form-note"
+                  className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
+                >
+                  <Send className="size-4" aria-hidden="true" />
+                  {contact_form.form_btn_text}
+                </button>
+                <p id="email-form-note" className="text-sm leading-relaxed text-muted-foreground">
+                  Tombol ini menyiapkan draf di aplikasi email Anda. Pesan baru terkirim setelah Anda mengirimnya dari sana.
+                </p>
               </div>
-
-              <div>
-                <label htmlFor="contact-email" className="mb-2 block text-sm font-semibold">
-                  Email
-                </label>
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  inputMode="email"
-                  autoComplete="email"
-                  spellCheck={false}
-                  required
-                  value={form.email}
-                  onChange={(event) => setForm({ ...form, email: event.target.value })}
-                  placeholder="nama@perusahaan.com…"
-                  className="focus-ring min-h-12 w-full rounded-lg border border-input bg-background px-4 text-sm placeholder:text-muted-foreground"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="contact-message" className="mb-2 block text-sm font-semibold">
-                  Kebutuhan Proyek
-                </label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  rows={8}
-                  autoComplete="off"
-                  required
-                  value={form.message}
-                  onChange={(event) => setForm({ ...form, message: event.target.value })}
-                  placeholder="Ceritakan masalah, target, dan ruang lingkup proyek…"
-                  className="focus-ring w-full resize-y rounded-lg border border-input bg-background px-4 py-3 text-sm placeholder:text-muted-foreground"
-                />
-              </div>
-
-              <button
-                type="submit"
-                aria-describedby="email-form-note"
-                className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
-              >
-                <Send className="size-4" aria-hidden="true" />
-                {contact_form.form_btn_text}
-              </button>
-              <p id="email-form-note" className="text-sm leading-relaxed text-muted-foreground">
-                Tombol ini menyiapkan draf di aplikasi email Anda. Pesan baru terkirim setelah Anda mengirimnya dari sana.
-              </p>
-            </div>
-          </form>
+            </form>
+          </BlurFade>
         </div>
       </div>
     </section>

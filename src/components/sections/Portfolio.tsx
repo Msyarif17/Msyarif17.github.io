@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { ArrowUpRight, FolderKanban, X } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { BlurFade } from "@/components/ui/blur-fade"
 import { GithubIcon } from "@/components/ui/social-icons"
 import type { PortfolioJSON, Project } from "@/types/portfolio"
 
@@ -114,7 +115,7 @@ export default function Portfolio({ data }: PortfolioProps) {
     <>
       <section id="portfolio" className="section-block border-b border-border">
         <div className="site-container">
-          <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+          <BlurFade inView className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
             <div>
               <p className="eyebrow mb-4">Portofolio</p>
               <h2 className="section-title">Sistem production, bukan sekadar demo.</h2>
@@ -136,7 +137,7 @@ export default function Portfolio({ data }: PortfolioProps) {
                 </a>
               ) : null}
             </div>
-          </div>
+          </BlurFade>
 
           <div className="mt-12 overflow-x-auto border-y border-border py-3 lg:sticky lg:top-18 lg:z-30 lg:bg-background" aria-label="Filter proyek">
             <div className="flex min-w-max gap-2">
@@ -169,53 +170,55 @@ export default function Portfolio({ data }: PortfolioProps) {
             </div>
           </div>
 
-          <div id="project-grid" className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {visibleProjects.map((project) => (
-              <article key={project.title} className="content-auto group min-w-0">
-                <button
-                  type="button"
-                  onClick={() => setSelected(project)}
-                  aria-haspopup="dialog"
-                  className="focus-ring flex h-full w-full flex-col rounded-lg text-left"
-                >
-                  <div className="w-full overflow-hidden rounded-lg border border-border bg-card">
-                    <ProjectVisual
-                      project={project}
-                      className="aspect-video w-full object-cover object-top transition-opacity duration-200 group-hover:opacity-90"
-                    />
-                  </div>
-                  <div className="flex w-full flex-1 flex-col pt-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
-                      {categoryLabel(project.category)}
-                    </p>
-                    <h3 className="mt-2 text-lg font-semibold leading-snug text-balance">{project.title}</h3>
-                    {project.role ? (
-                      <p className="mt-1 text-sm font-medium text-muted-foreground">{project.role}</p>
-                    ) : null}
-                    <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
-                      {project.description}
-                    </p>
-                    <div className="mt-4 flex flex-wrap items-center gap-1.5">
-                      {project.technologies.slice(0, 4).map((technology) => (
-                        <Badge key={technology} variant="outline" className="h-auto rounded-sm bg-transparent px-2 py-1 text-xs font-normal text-muted-foreground">
-                          {technology}
-                        </Badge>
-                      ))}
-                      {project.technologies.length > 4 ? (
-                        <span className="px-1 text-xs text-muted-foreground">
-                          +{project.technologies.length - 4} lainnya
-                        </span>
-                      ) : null}
+          <BlurFade inView delay={0.08} className="mt-10">
+            <div id="project-grid" className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {visibleProjects.map((project) => (
+                <article key={project.title} className="content-auto group min-w-0">
+                  <button
+                    type="button"
+                    onClick={() => setSelected(project)}
+                    aria-haspopup="dialog"
+                    className="focus-ring flex h-full w-full flex-col rounded-lg text-left"
+                  >
+                    <div className="w-full overflow-hidden rounded-lg border border-border bg-card">
+                      <ProjectVisual
+                        project={project}
+                        className="aspect-video w-full object-cover object-top transition-opacity duration-200 group-hover:opacity-90"
+                      />
                     </div>
-                    <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-primary">
-                      Lihat detail
-                      <ArrowUpRight className="size-4" aria-hidden="true" />
-                    </span>
-                  </div>
-                </button>
-              </article>
-            ))}
-          </div>
+                    <div className="flex w-full flex-1 flex-col pt-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
+                        {categoryLabel(project.category)}
+                      </p>
+                      <h3 className="mt-2 text-lg font-semibold leading-snug text-balance">{project.title}</h3>
+                      {project.role ? (
+                        <p className="mt-1 text-sm font-medium text-muted-foreground">{project.role}</p>
+                      ) : null}
+                      <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                        {project.description}
+                      </p>
+                      <div className="mt-4 flex flex-wrap items-center gap-1.5">
+                        {project.technologies.slice(0, 4).map((technology) => (
+                          <Badge key={technology} variant="outline" className="h-auto rounded-sm bg-transparent px-2 py-1 text-xs font-normal text-muted-foreground">
+                            {technology}
+                          </Badge>
+                        ))}
+                        {project.technologies.length > 4 ? (
+                          <span className="px-1 text-xs text-muted-foreground">
+                            +{project.technologies.length - 4} lainnya
+                          </span>
+                        ) : null}
+                      </div>
+                      <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-primary">
+                        Lihat detail
+                        <ArrowUpRight className="size-4" aria-hidden="true" />
+                      </span>
+                    </div>
+                  </button>
+                </article>
+              ))}
+            </div>
+          </BlurFade>
           {remaining > 0 ? (
             <div className="mt-12 text-center">
               <button

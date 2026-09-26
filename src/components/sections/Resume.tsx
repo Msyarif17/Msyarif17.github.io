@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Briefcase, GraduationCap, Wrench } from "lucide-react"
+import { BlurFade } from "@/components/ui/blur-fade"
 import type { PortfolioJSON } from "@/types/portfolio"
 
 interface ResumeProps {
@@ -24,8 +25,10 @@ export default function Resume({ data }: ResumeProps) {
       <div className="site-container">
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <p className="eyebrow mb-4">Rekam Jejak</p>
-            <h2 className="section-title">Pengalaman yang membentuk cara kerja.</h2>
+            <BlurFade inView>
+              <p className="eyebrow mb-4">Rekam Jejak</p>
+              <h2 className="section-title">Pengalaman yang membentuk cara kerja.</h2>
+            </BlurFade>
             <div className="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Rekam jejak">
               {tabs.map((tab) => {
                 const Icon = tab.icon
@@ -70,7 +73,7 @@ export default function Resume({ data }: ResumeProps) {
             </div>
           </div>
 
-          <div className="lg:pt-4">
+          <BlurFade inView delay={0.08} className="lg:pt-4">
             <div id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" tabIndex={0} hidden={active !== "experience"}>
                 <ol className="border-t border-border">
                   {data.resume.experience.map((experience) => (
@@ -119,7 +122,7 @@ export default function Resume({ data }: ResumeProps) {
                   ))}
                 </ul>
             </div>
-          </div>
+          </BlurFade>
         </div>
       </div>
     </section>

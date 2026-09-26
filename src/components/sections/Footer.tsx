@@ -1,4 +1,5 @@
 import { ArrowUp } from "lucide-react"
+import { BlurFade } from "@/components/ui/blur-fade"
 import { GithubIcon, LinkedinIcon, WhatsappIcon } from "@/components/ui/social-icons"
 import type { PortfolioJSON } from "@/types/portfolio"
 
@@ -26,7 +27,7 @@ export default function Footer({ data }: FooterProps) {
   return (
     <footer className="border-t border-border py-10">
       <div className="site-container">
-        <div className="grid gap-10 md:grid-cols-[1.3fr_0.7fr_0.7fr]">
+        <BlurFade inView className="grid gap-10 md:grid-cols-[1.3fr_0.7fr_0.7fr]">
           <div>
             <a href="#home" className="focus-ring inline-flex items-center gap-3 rounded-lg">
               <span className="flex size-9 items-center justify-center rounded-md bg-foreground text-xs font-bold tracking-wider text-background">
@@ -75,15 +76,15 @@ export default function Footer({ data }: FooterProps) {
               })}
             </ul>
           </div>
-        </div>
+        </BlurFade>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <BlurFade inView delay={0.08} className="mt-10 flex flex-col gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {personal_info.name}. Seluruh hak dilindungi.</p>
           <a href="#home" className="focus-ring inline-flex w-fit items-center gap-2 rounded-sm font-medium hover:text-foreground">
             Kembali ke atas
             <ArrowUp className="size-3.5" aria-hidden="true" />
           </a>
-        </div>
+        </BlurFade>
       </div>
     </footer>
   )

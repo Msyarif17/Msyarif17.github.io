@@ -104,7 +104,7 @@ export interface Resume {
 
 export interface Skill {
   name: string
-  proficiency: string
+  proficiency?: string
   category?: string
   logo?: string
 }
