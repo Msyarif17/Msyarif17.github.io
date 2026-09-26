@@ -70,18 +70,7 @@ export default function Hero({ data }: HeroProps) {
             transition={{ duration: 0.7 }}
             className="space-y-10 max-w-2xl"
           >
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-4 py-2"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF2D20] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF2D20]" />
-              </span>
-              <span className="text-xs font-semibold text-gray-200 uppercase tracking-[0.25em]">{hero.tagline}</span>
-            </motion.div>
+            
 
             <div className="space-y-5">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.05] tracking-tight">
