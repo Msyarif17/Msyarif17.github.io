@@ -1,12 +1,27 @@
 "use client"
 
 import { motion } from "framer-motion"
-import type { PortfolioJSON } from "@/types/portfolio"
-import LogoLoop from "@/components/ui/LogoLoop"
+import { Boxes, Code2, Database, Layers, type LucideIcon } from "lucide-react"
+import type { PortfolioJSON, Skill } from "@/types/portfolio"
 
 interface SkillsProps {
   data: PortfolioJSON
 }
+
+const categoryIcons: Record<string, LucideIcon> = {
+  Language: Code2,
+  Framework: Layers,
+  Database: Database,
+}
+
+const accents = [
+  "bg-[#FF2D20]/10 border-[#FF2D20]/20 text-[#FF2D20]",
+  "bg-orange-500/10 border-orange-500/20 text-orange-400",
+  "bg-amber-500/10 border-amber-500/20 text-amber-400",
+]
+
+const pct = (s: Skill) => parseInt(s.proficiency)
+const categoryOf = (s: Skill) => s.category ?? "Other"
 
 function levelLabel(pct: number) {
   if (pct >= 90) return "Expert"
@@ -17,8 +32,16 @@ function levelLabel(pct: number) {
 
 export default function Skills({ data }: SkillsProps) {
   const { skills } = data
-  const sorted = [...skills].sort((a, b) => parseInt(b.proficiency) - parseInt(a.proficiency))
-  const top3 = sorted.slice(0, 3)
+  const groups = [...new Set(skills.map(categoryOf))].map((name) => ({
+    name,
+    items: skills.filter((s) => categoryOf(s) === name).sort((a, b) => pct(b) - pct(a)),
+  }))
+  const avg = Math.round(skills.reduce((sum, s) => sum + pct(s), 0) / skills.length)
+  const stats = [
+    { value: skills.length, label: "Technologies" },
+    { value: `${avg}%`, label: "Avg. Level" },
+    { value: skills.filter((s) => pct(s) >= 90).length, label: "Expert" },
+  ]
 
   return (
     <section id="skills" className="py-16 relative">
@@ -29,141 +52,94 @@ export default function Skills({ data }: SkillsProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-10 lg:mb-16"
+          className="mb-12 lg:mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6"
         >
-          <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#FF2D20] uppercase tracking-[0.2em] mb-3">
-            <span className="w-6 h-px bg-[#FF2D20]" />
-            Skills
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight">
-            Technical
-            <br />
-            <span className="text-white/30">Expertise</span>
-          </h2>
+          <div>
+            <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#FF2D20] uppercase tracking-[0.2em] mb-3">
+              <span className="w-6 h-px bg-[#FF2D20]" />
+              Skills
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+              Technical
+              <br />
+              <span className="text-white/30">Expertise</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            {stats.map((stat) => (
+              <div key={stat.label} className="glass rounded-2xl border border-white/8 px-4 sm:px-5 py-3 text-center">
+                <span className="block text-2xl sm:text-3xl font-black text-gradient-primary tabular-nums">{stat.value}</span>
+                <span className="text-[10px] text-gray-500 uppercase tracking-widest whitespace-nowrap">{stat.label}</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-[1fr_360px] gap-6">
-
-          <div className="glass rounded-3xl border border-white/8 overflow-hidden">
-            <div className="p-4 sm:p-8 space-y-5 sm:space-y-6">
-              {skills.map((skill, i) => {
-                const level = parseInt(skill.proficiency)
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.07, duration: 0.4 }}
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2.5 min-w-0 flex-1">
-                        {skill.logo && (
-                          <img
-                            src={skill.logo}
-                            alt={skill.name}
-                            className="w-4 h-4 sm:w-5 sm:h-5 object-contain brightness-0 opacity-60 dark:invert dark:opacity-75 shrink-0"
-                          />
-                        )}
-                        <span className="font-black text-white text-sm truncate">{skill.name}</span>
-                      </div>
-                      <div className="flex items-center gap-2 shrink-0 ml-2">
-                        <span className="hidden sm:block text-xs text-gray-500 font-medium">{levelLabel(level)}</span>
-                        <span className="text-xs sm:text-sm font-black text-white tabular-nums">{skill.proficiency}</span>
-                      </div>
+        <div className="grid md:grid-cols-3 gap-5">
+          {groups.map((group, gi) => {
+            const Icon = categoryIcons[group.name] ?? Boxes
+            return (
+              <motion.div
+                key={group.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: gi * 0.1, duration: 0.5 }}
+                className="glass rounded-3xl border border-white/8 hover:border-[#FF2D20]/25 transition-colors p-5 sm:p-6"
+              >
+                <div className="flex items-center justify-between gap-3 mb-5">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 ${accents[gi % accents.length]}`}>
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <div className="relative h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                      <motion.div
-                        className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-[#FF2D20] to-orange-400"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.2, ease: "easeOut", delay: i * 0.07 }}
-                      />
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6">
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="glass rounded-3xl border border-white/8 overflow-hidden"
-            >
-              <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">Top Strengths</p>
-                {top3.map((skill, i) => (
-                  <div key={i} className="flex items-center gap-2 sm:gap-3">
-                    <span className="text-lg sm:text-2xl lg:text-3xl font-black text-white tabular-nums w-10 sm:w-12 lg:w-16 shrink-0">{skill.proficiency}</span>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-black text-white text-xs sm:text-sm leading-tight truncate">{skill.name}</p>
-                      <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 hidden sm:block">{levelLabel(parseInt(skill.proficiency))}</p>
-                    </div>
-                    <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl bg-[#FF2D20]/10 border border-[#FF2D20]/20 flex items-center justify-center shrink-0">
-                      <span className="text-[9px] sm:text-[10px] font-black text-[#FF2D20]">#{i + 1}</span>
-                    </div>
+                    <h3 className="font-black text-white text-lg">{group.name}</h3>
                   </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="glass rounded-3xl border border-white/8 overflow-hidden"
-            >
-              <div className="p-4 sm:p-6 flex flex-col h-full">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-3 sm:mb-4">Tech Stack</p>
-                <div className="flex flex-col gap-3 justify-center flex-1 overflow-hidden">
-                  <LogoLoop
-                    logos={skills.map((skill) => ({
-                      node: (
-                        <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-white/8 bg-white/[0.04] text-gray-400">
-                          {skill.logo && (
-                            <img src={skill.logo} alt={skill.name} className="w-3 h-3 object-contain brightness-0 opacity-50 dark:invert dark:opacity-60 shrink-0" />
-                          )}
-                          <span className="text-[11px] font-medium whitespace-nowrap">{skill.name}</span>
-                        </div>
-                      ),
-                    }))}
-                    speed={35}
-                    direction="left"
-                    logoHeight={28}
-                    gap={6}
-                    pauseOnHover
-                    fadeOut
-                  />
-                  <LogoLoop
-                    logos={[...skills].reverse().map((skill) => ({
-                      node: (
-                        <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-white/8 bg-white/[0.04] text-gray-400">
-                          {skill.logo && (
-                            <img src={skill.logo} alt={skill.name} className="w-3 h-3 object-contain brightness-0 opacity-50 dark:invert dark:opacity-60 shrink-0" />
-                          )}
-                          <span className="text-[11px] font-medium whitespace-nowrap">{skill.name}</span>
-                        </div>
-                      ),
-                    }))}
-                    speed={28}
-                    direction="right"
-                    logoHeight={28}
-                    gap={6}
-                    pauseOnHover
-                    fadeOut
-                  />
+                  <span className="text-xs font-semibold text-gray-500 bg-white/5 border border-white/8 rounded-full px-2.5 py-0.5 tabular-nums">
+                    {group.items.length}
+                  </span>
                 </div>
-              </div>
-            </motion.div>
 
-          </div>
+                <div className="space-y-1">
+                  {group.items.map((skill, i) => {
+                    const level = pct(skill)
+                    return (
+                      <div key={skill.name} className="group flex items-center gap-3.5 rounded-2xl p-2.5 -mx-2.5 hover:bg-white/5 transition-colors">
+                        <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/8 flex items-center justify-center shrink-0">
+                          {skill.logo && (
+                            // Monochrome by default, brand color on hover.
+                            <img
+                              src={skill.logo}
+                              alt={skill.name}
+                              className="w-5 h-5 object-contain brightness-0 opacity-60 dark:invert dark:opacity-75 group-hover:filter-none group-hover:opacity-100 dark:group-hover:filter-none dark:group-hover:opacity-100 transition duration-300"
+                            />
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-baseline justify-between gap-2 mb-1.5">
+                            <div className="min-w-0 truncate">
+                              <span className="font-bold text-white text-sm">{skill.name}</span>
+                              <span className="ml-2 text-[11px] text-gray-500">{levelLabel(level)}</span>
+                            </div>
+                            <span className="text-sm font-black text-white tabular-nums shrink-0">{skill.proficiency}</span>
+                          </div>
+                          <div className="relative h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                            <motion.div
+                              className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-[#FF2D20] to-orange-400"
+                              initial={{ width: 0 }}
+                              whileInView={{ width: `${level}%` }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 1.1, ease: "easeOut", delay: gi * 0.1 + i * 0.08 }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
 
       </div>

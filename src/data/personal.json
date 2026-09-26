@@ -165,14 +165,14 @@
     ]
   },
   "skills": [
-    { "name": "PHP", "proficiency": "97%", "logo": "/assets/images/skills/php.svg" },
-    { "name": "Python", "proficiency": "91%", "logo": "/assets/images/skills/python.svg" },
-    { "name": "JavaScript", "proficiency": "93%", "logo": "/assets/images/skills/javascript.svg" },
-    { "name": "Laravel", "proficiency": "98%", "logo": "/assets/images/skills/laravel.svg" },
-    { "name": "Lumen", "proficiency": "94%", "logo": "/assets/images/skills/lumen.svg" },
-    { "name": "CodeIgniter", "proficiency": "90%", "logo": "/assets/images/skills/codeigniter.svg" },
-    { "name": "PostgreSQL", "proficiency": "92%", "logo": "/assets/images/skills/postgresql.svg" },
-    { "name": "MySQL", "proficiency": "96%", "logo": "/assets/images/skills/mysql.svg" }
+    { "name": "PHP", "proficiency": "97%", "category": "Language", "logo": "/assets/images/skills/php.svg" },
+    { "name": "Python", "proficiency": "91%", "category": "Language", "logo": "/assets/images/skills/python.svg" },
+    { "name": "JavaScript", "proficiency": "93%", "category": "Language", "logo": "/assets/images/skills/javascript.svg" },
+    { "name": "Laravel", "proficiency": "98%", "category": "Framework", "logo": "/assets/images/skills/laravel.svg" },
+    { "name": "Lumen", "proficiency": "94%", "category": "Framework", "logo": "/assets/images/skills/lumen.svg" },
+    { "name": "CodeIgniter", "proficiency": "90%", "category": "Framework", "logo": "/assets/images/skills/codeigniter.svg" },
+    { "name": "PostgreSQL", "proficiency": "92%", "category": "Database", "logo": "/assets/images/skills/postgresql.svg" },
+    { "name": "MySQL", "proficiency": "96%", "category": "Database", "logo": "/assets/images/skills/mysql.svg" }
   ],
   "hero": {
     "description": "I design and build delightful digital experiences, bringing ideas to life with clean code, intuitive UX, and high-performance solutions.",
