@@ -129,8 +129,10 @@ export interface PortfolioCategory {
 export interface Project {
   title: string
   category: string
-  image: string
+  image?: string
   link: string
+  role?: string
+  responsibilities?: string[]
   description: string
   technologies: string[]
 }

@@ -1,13 +1,13 @@
 {
   "personal_info": {
     "name": "Muhammad Syarif Setiadi",
-    "title": "Fullstack Web developer",
+    "title": "Senior Software Engineer & Full-Stack Developer",
     "avatar": "./assets/images/my-avatar-2.jpg",
     "contact": {
       "email": "m.syarifsetiadi.freelancer@gmail.com",
       "phone": "+6289662279662",
       "birthday": "April 17, 2000",
-      "location": "Ciamis, West Java, Indonesia"
+      "location": "Ciamis, Jawa Barat, Indonesia"
     },
     "social": [
       {
@@ -19,26 +19,26 @@
         "link": "https://wa.me/6289662279662"
       },
       {
-        "platform": "instagram",
-        "link": "#"
+        "platform": "github",
+        "link": "https://github.com/msyarif17"
       }
     ]
   },
   "about": {
-    "text": "Hello! I am a Fullstack Web Developer, I have developed skills and extensive experience in building attractive and functional web solutions with more than 5 years experience. With expertise in programming languages such as PHP, Python, Java ,HTML, CSS, JavaScript, as well as the use of frameworks such as Laravel, Lumen, Flask, Fast API, I have created intuitive and responsive web applications. I also have expertise in designing and managing databases using technologies such as MySQL, PostgreSQL. My portfolio spans a wide range of projects, from sophisticated e-commerce websites with payment features and third-party integrations, to interactive web applications that use APIs to retrieve data in real-time. I enjoy working in a collaborative team and always strive to provide the best and innovative solutions for clients and end users. With strong experience in web development, I am ready for new challenges and contribute to creating engaging and impactful web experiences for users.",
+    "text": "Saya adalah Senior Software Engineer dan Full-Stack Developer dengan pengalaman lebih dari lima tahun membangun aplikasi bisnis, platform e-commerce, sistem SaaS, dashboard analitik, serta integrasi API. Saya menangani pengembangan secara end-to-end, mulai dari system design, backend, frontend, database, deployment, hingga operasional server production. Fokus saya adalah menghasilkan software yang aman, mudah dipelihara, dan benar-benar membantu proses bisnis pengguna.",
     "quick_stats": [
-      { "value": "5+", "label": "Years Exp", "color": "text-blue-400" },
-      { "value": "50+", "label": "Projects", "color": "text-green-400" },
-      { "value": "98%", "label": "Laravel", "color": "text-purple-400" },
-      { "value": "24/7", "label": "Support", "color": "text-yellow-400" }
+      { "value": "5+", "label": "Tahun Pengalaman", "color": "text-blue-400" },
+      { "value": "Full-Stack", "label": "Cakupan Teknis", "color": "text-green-400" },
+      { "value": "Production", "label": "Fokus Delivery", "color": "text-purple-400" },
+      { "value": "End-to-End", "label": "Cara Kerja", "color": "text-yellow-400" }
     ],
     "what_i_love": [
-      { "icon": "code", "label": "Clean Code Architecture", "color": "text-blue-400" },
-      { "icon": "zap", "label": "Performance Optimization", "color": "text-yellow-400" },
-      { "icon": "users", "label": "Team Collaboration", "color": "text-green-400" },
-      { "icon": "lightbulb", "label": "Problem Solving", "color": "text-purple-400" },
-      { "icon": "rocket", "label": "New Technologies", "color": "text-orange-400" },
-      { "icon": "coffee", "label": "Coffee & Coding", "color": "text-amber-400" }
+      { "icon": "code", "label": "Arsitektur yang Maintainable", "color": "text-blue-400" },
+      { "icon": "zap", "label": "Optimasi Performa", "color": "text-yellow-400" },
+      { "icon": "users", "label": "Kolaborasi Tim", "color": "text-green-400" },
+      { "icon": "lightbulb", "label": "Pemecahan Masalah", "color": "text-purple-400" },
+      { "icon": "rocket", "label": "Delivery ke Production", "color": "text-orange-400" },
+      { "icon": "coffee", "label": "Belajar Berkelanjutan", "color": "text-amber-400" }
     ],
     "freelance_status": "Available"
   },
@@ -175,20 +175,20 @@
     { "name": "MySQL", "proficiency": "96%", "category": "Database", "logo": "/assets/images/skills/mysql.svg" }
   ],
   "hero": {
-    "description": "I design and build delightful digital experiences, bringing ideas to life with clean code, intuitive UX, and high-performance solutions.",
+    "description": "Saya merancang, membangun, dan mengoperasikan software production untuk kebutuhan bisnis, mulai dari aplikasi web dan API hingga integrasi sistem serta infrastruktur server.",
     "stats": [
-      { "value": "5+", "label": "Years experience" },
-      { "value": "50+", "label": "Projects shipped" },
-      { "value": "12+", "label": "Happy clients" }
+      { "value": "5+", "label": "Tahun pengalaman" },
+      { "value": "Full-Stack", "label": "Frontend sampai backend" },
+      { "value": "Production", "label": "Deployment & operations" }
     ],
     "highlights": [
-      { "icon": "zap", "label": "High Performance" },
-      { "icon": "shield-check", "label": "Secure Architecture" },
-      { "icon": "cpu", "label": "Cloud Ready" },
-      { "icon": "heart", "label": "User Focused" }
+      { "icon": "zap", "label": "Performa Terukur" },
+      { "icon": "shield-check", "label": "Arsitektur Aman" },
+      { "icon": "cpu", "label": "Siap Production" },
+      { "icon": "heart", "label": "Berorientasi Pengguna" }
     ],
-    "cta_primary": { "label": "View Portfolio", "href": "#portfolio", "icon": "rocket" },
-    "cta_secondary": { "label": "Let's Collaborate", "href": "#contact", "icon": "mail" }
+    "cta_primary": { "label": "Lihat Proyek", "href": "#portfolio", "icon": "rocket" },
+    "cta_secondary": { "label": "Mari Berdiskusi", "href": "#contact", "icon": "mail" }
   },
   "services": {
     "categories": [
@@ -197,10 +197,10 @@
       { "icon": "shield-check", "label": "Secure & Reliable" }
     ],
     "stats": [
-      { "value": "50+", "label": "Projects Completed", "color": "text-blue-400" },
-      { "value": "5+", "label": "Years Experience", "color": "text-green-400" },
-      { "value": "24/7", "label": "Support Available", "color": "text-purple-400" },
-      { "value": "100%", "label": "Client Satisfaction", "color": "text-orange-400" }
+      { "value": "5+", "label": "Tahun Pengalaman", "color": "text-blue-400" },
+      { "value": "API", "label": "Integrasi Sistem", "color": "text-green-400" },
+      { "value": "DevOps", "label": "Server Production", "color": "text-purple-400" },
+      { "value": "Full-Stack", "label": "Delivery End-to-End", "color": "text-orange-400" }
     ],
     "technology_stack": [
       { "icon": "code", "label": "React", "color": "text-blue-400", "bg": "bg-blue-500/20" },
@@ -287,14 +287,157 @@
   ],
   "portfolio": {
     "categories": [
-      { "filter": "all", "label": "All Projects", "icon": "grid-3x3" },
-      { "filter": "web", "label": "Web Apps", "icon": "globe" },
-      { "filter": "api", "label": "API Development", "icon": "server" },
-      { "filter": "design", "label": "UI/UX Design", "icon": "palette" },
-      { "filter": "game", "label": "Games", "icon": "gamepad-2" }
+      { "filter": "all", "label": "Semua Proyek", "icon": "grid-3x3" },
+      { "filter": "commerce", "label": "Commerce & Data", "icon": "bar-chart" },
+      { "filter": "platform", "label": "Platform & DevOps", "icon": "server" },
+      { "filter": "business", "label": "Sistem Bisnis", "icon": "briefcase" },
+      { "filter": "web", "label": "Aplikasi Web", "icon": "globe" },
+      { "filter": "api", "label": "API & Integrasi", "icon": "network" },
+      { "filter": "design", "label": "UI/UX", "icon": "palette" },
+      { "filter": "game", "label": "Game", "icon": "gamepad-2" }
     ],
     "github_url": "https://github.com/msyarif17",
     "projects": [
+      {
+        "title": "Marketplace Commerce Hub",
+        "category": "commerce",
+        "image": "./assets/portofolio/app.naturalva.co.id.png",
+        "link": "https://marketplace.nhi.co.id",
+        "role": "Lead Full-Stack & Platform Engineer",
+        "description": "Back office terpusat untuk mengelola order, settlement, revenue, cost, affiliate, advertising, master data, RBAC, dan laporan operasional dari beberapa marketplace.",
+        "responsibilities": [
+          "Merancang arsitektur aplikasi, data pipeline, dan canonical order model.",
+          "Mengembangkan dashboard React/Inertia, backend Laravel, queue, serta laporan keuangan dan operasional.",
+          "Mengintegrasikan TikTok Shop, Shopee, Lazada, webhook, settlement, dan advertising API."
+        ],
+        "technologies": ["Laravel", "React", "TypeScript", "PostgreSQL", "Queue", "TikTok Shop API", "Shopee API"]
+      },
+      {
+        "title": "Naturalva Multi-Store Commerce",
+        "category": "commerce",
+        "image": "./assets/portofolio/naturalvaherba.co.id.png",
+        "link": "https://naturalva.co.id",
+        "role": "Full-Stack Engineer",
+        "description": "Ekosistem e-commerce multi-storefront dengan admin back office, storefront API, checkout, inventory, promotion, payment, shipping, dan realtime order updates.",
+        "responsibilities": [
+          "Membangun admin Laravel/React dan REST API untuk storefront Next.js.",
+          "Merancang multi-tenancy per domain, customer authentication, order, promotion, dan inventory flow.",
+          "Mengintegrasikan Xendit, Billplz, COD, Mengantar, EasyParcel, Maukirim, dan Laravel Reverb."
+        ],
+        "technologies": ["Laravel", "React", "Next.js", "PostgreSQL", "Xendit", "Billplz", "Laravel Reverb"]
+      },
+      {
+        "title": "ParentingAnak Content & Commerce Platform",
+        "category": "web",
+        "image": "",
+        "link": "https://parentinganak.id",
+        "role": "Software Architect & Full-Stack Engineer",
+        "description": "Platform konten parenting berbayar untuk video HLS, artikel SEO, ebook, webinar, subscription, dan pembelian produk digital dalam satu codebase multi-domain.",
+        "responsibilities": [
+          "Merancang entitlement untuk subscription, pembelian satuan, dan akses konten.",
+          "Membangun pipeline upload S3 dan transcoding video HLS 360p, 720p, serta 1080p.",
+          "Mengembangkan payment webhook, background job, API, dashboard, dan integrasi layanan eksternal."
+        ],
+        "technologies": ["Laravel", "React", "TypeScript", "PostgreSQL", "S3", "HLS", "Xendit", "MCP"]
+      },
+      {
+        "title": "Smartup Application Rental Platform",
+        "category": "platform",
+        "image": "",
+        "link": "https://smartup.id",
+        "role": "Full-Stack & Platform Engineer",
+        "description": "Platform katalog dan penyewaan aplikasi yang mengotomatisasi cloning service, subdomain, DNS, deployment, progress tracking, paket, serta akses aplikasi client.",
+        "responsibilities": [
+          "Membangun provisioning flow dari subscription hingga aplikasi siap digunakan.",
+          "Mengintegrasikan Dokploy dan Cloudflare untuk duplicate service, DNS, domain, dan deployment.",
+          "Mengembangkan dashboard client, status deployment realtime, retry flow, dan gateway credential handoff."
+        ],
+        "technologies": ["Laravel", "React", "TypeScript", "Dokploy", "Docker", "Cloudflare", "Reverb"]
+      },
+      {
+        "title": "SaaS Management Control Plane",
+        "category": "platform",
+        "image": "",
+        "link": "https://saas.nhi.co.id",
+        "role": "Backend & Platform Engineer",
+        "description": "Control plane untuk source repository, application catalog, immutable release, build pipeline, subscription, workspace, RBAC, instance settings, dan custom domain.",
+        "responsibilities": [
+          "Merancang domain model catalog, release, build, plan, subscription, workspace, dan membership.",
+          "Membangun admin Inertia, REST API client, tenant authorization, serta build-agent boundary.",
+          "Menyiapkan alur private GitHub, deploy key, OCI image digest, Xendit QRIS, dan runtime provisioning."
+        ],
+        "technologies": ["Laravel", "React", "PostgreSQL", "Docker", "GitHub", "OCI Registry", "Xendit"]
+      },
+      {
+        "title": "Marketplace Integration Gateway",
+        "category": "api",
+        "image": "",
+        "link": "https://bridge.smartup.id",
+        "role": "Backend & Integration Engineer",
+        "description": "Gateway multi-instance untuk OAuth, credential handoff, webhook delivery, request signing, replay protection, dan koneksi seller marketplace yang terisolasi.",
+        "responsibilities": [
+          "Membangun OAuth lifecycle untuk TikTok Shop, Shopee, dan Lazada.",
+          "Menjaga isolasi credential, ownership, webhook delivery, dan resource per gateway instance.",
+          "Mengoptimalkan concurrency database agar request provider dapat diproses paralel dengan aman."
+        ],
+        "technologies": ["Laravel", "PostgreSQL", "OAuth", "Webhook", "API Signing", "TikTok Shop", "Shopee"]
+      },
+      {
+        "title": "Finpro & RSLA Procurement Workflow",
+        "category": "business",
+        "image": "",
+        "link": "https://finpro.nhi.co.id",
+        "role": "Full-Stack Engineer",
+        "description": "Sistem purchase request dan purchase order dengan prioritas pengajuan, multi-stage approval, sinkronisasi event, audit trail, dan kontrol dokumen keuangan.",
+        "responsibilities": [
+          "Merancang flow approval dan sinkronisasi status antara aplikasi sumber, RSLA, dan Finpro.",
+          "Mengembangkan prioritas Urgent, Segera, dan Non Urgent tanpa menghilangkan histori dokumen.",
+          "Membangun interface operasional, webhook processing, validation, dan deployment production."
+        ],
+        "technologies": ["Laravel", "React", "PostgreSQL", "Workflow", "Webhook", "Audit Trail"]
+      },
+      {
+        "title": "Odoo Manufacturing & Warehouse Management",
+        "category": "business",
+        "image": "./assets/portofolio/management server.png",
+        "link": "https://manufaktur.nhi.co.id",
+        "role": "Platform & Server Engineer",
+        "description": "Deployment aplikasi manufacturing dan warehouse management untuk mendukung inventory, operasional gudang, produksi, serta proses akuntansi perusahaan.",
+        "responsibilities": [
+          "Menyiapkan runtime Odoo berbasis Docker dan PostgreSQL pada server production.",
+          "Menangani database migration, backup, restore, module deployment, dan akses domain.",
+          "Melakukan maintenance, troubleshooting, serta pengamanan environment aplikasi."
+        ],
+        "technologies": ["Odoo", "Docker", "PostgreSQL", "Linux", "Backup & Restore", "Server Operations"]
+      },
+      {
+        "title": "OpenProject Delivery Platform",
+        "category": "platform",
+        "image": "",
+        "link": "https://projects.nhi.co.id",
+        "role": "Platform & DevOps Engineer",
+        "description": "Platform kolaborasi proyek dengan work package, board, Gantt, meeting, time and cost, resource planning, email, serta realtime collaboration.",
+        "responsibilities": [
+          "Men-deploy OpenProject dalam container dengan PostgreSQL dan persistent volume.",
+          "Menyiapkan Nginx/Plesk reverse proxy, WebSocket, Cloudflare, health check, serta rollback backup.",
+          "Mengonfigurasi SMTP, SPF, DKIM, DMARC, dan memverifikasi pengiriman email end-to-end."
+        ],
+        "technologies": ["OpenProject", "Docker", "PostgreSQL", "Nginx", "Plesk", "Cloudflare", "SMTP"]
+      },
+      {
+        "title": "Production Infrastructure & Server Operations",
+        "category": "platform",
+        "image": "./assets/portofolio/management server.png",
+        "link": "#",
+        "role": "Platform Engineer",
+        "description": "Setup dan operasional environment production untuk aplikasi marketplace, OMS, retail, finance, manufacturing, analytics, bot, messaging, dan SaaS pada beberapa server Linux.",
+        "responsibilities": [
+          "Mengelola Plesk, Nginx, Docker, Dokploy, domain routing, DNS, SSL/TLS, dan reverse proxy.",
+          "Menangani PostgreSQL, MySQL, Redis, queue worker, scheduler, monitoring, backup, dan restore.",
+          "Melakukan deployment, server hardening, log analysis, incident troubleshooting, dan rollback planning."
+        ],
+        "technologies": ["Linux", "Docker", "Plesk", "Nginx", "Dokploy", "Cloudflare", "PostgreSQL", "Monitoring"]
+      },
       {
         "title": "Web Profile - Informatics Engineering",
         "category": "web",
