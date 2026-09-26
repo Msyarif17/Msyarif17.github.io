@@ -177,7 +177,6 @@
     }
   ],
   "hero": {
-    "tagline": "Available for freelance",
     "description": "I design and build delightful digital experiences, bringing ideas to life with clean code, intuitive UX, and high-performance solutions.",
     "stats": [
       { "value": "5+", "label": "Years experience" },
