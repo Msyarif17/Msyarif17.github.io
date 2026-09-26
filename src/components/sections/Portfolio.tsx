@@ -1,15 +1,36 @@
 "use client"
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ExternalLink, X } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
+import { ArrowUpRight, FolderKanban, X } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
 import { GithubIcon } from "@/components/ui/social-icons"
-import CardSwap, { Card } from "@/components/ui/CardSwap"
-import type { PortfolioJSON } from "@/types/portfolio"
-import type { Project } from "@/types/portfolio"
+import type { PortfolioJSON, Project } from "@/types/portfolio"
 
-function assetPath(p: string) {
-  return p.replace(/^\.\//, "/")
+function assetPath(path: string) {
+  return path.replace(/^\.\//, "/")
+}
+
+function ProjectVisual({ project, className = "" }: { project: Project; className?: string }) {
+  if (project.image) {
+    return (
+      <Image
+        src={assetPath(project.image)}
+        alt={`Tampilan proyek ${project.title}`}
+        width={960}
+        height={540}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className={className}
+      />
+    )
+  }
+
+  return (
+    <div className={`flex h-full w-full flex-col items-center justify-center gap-3 bg-secondary p-6 text-center ${className}`}>
+      <FolderKanban className="size-8 text-primary" aria-hidden="true" />
+      <span className="text-sm text-muted-foreground">Pratinjau belum tersedia</span>
+    </div>
+  )
 }
 
 interface PortfolioProps {
@@ -19,284 +40,292 @@ interface PortfolioProps {
 export default function Portfolio({ data }: PortfolioProps) {
   const { portfolio } = data
   const [active, setActive] = useState("all")
+  const [visibleCount, setVisibleCount] = useState(9)
   const [selected, setSelected] = useState<Project | null>(null)
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
 
   const filtered =
     active === "all"
       ? portfolio.projects
-      : portfolio.projects.filter((p) => p.category === active)
+      : portfolio.projects.filter((project) => project.category === active)
+  const visibleProjects = filtered.slice(0, visibleCount)
+  const remaining = filtered.length - visibleProjects.length
 
-  const featured = portfolio.projects.slice(0, 4)
+  const categoryLabel = (category: string) =>
+    portfolio.categories.find((item) => item.filter === category)?.label ?? category
+
+  useEffect(() => {
+    const syncCategory = () => {
+      const category = new URLSearchParams(window.location.search).get("category")
+      const validCategory = category !== null && portfolio.categories.some((item) => item.filter === category)
+      setActive(validCategory ? category : "all")
+      setVisibleCount(9)
+    }
+
+    const frame = window.requestAnimationFrame(syncCategory)
+    window.addEventListener("popstate", syncCategory)
+
+    return () => {
+      window.cancelAnimationFrame(frame)
+      window.removeEventListener("popstate", syncCategory)
+    }
+  }, [portfolio.categories])
+
+  useEffect(() => {
+    if (!selected) return
+
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    const previousOverflow = document.body.style.overflow
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelected(null)
+        return
+      }
+
+      if (event.key !== "Tab") return
+
+      const focusable = dialogRef.current?.querySelectorAll<HTMLElement>('button:not([disabled]), a[href], [tabindex="0"]')
+      if (!focusable?.length) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.body.style.overflow = "hidden"
+    window.addEventListener("keydown", onKeyDown)
+    closeButtonRef.current?.focus()
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener("keydown", onKeyDown)
+      previousFocus?.focus()
+    }
+  }, [selected])
 
   return (
     <>
-    <section id="portfolio" className="py-16 relative overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Row 1 — Hero card with CardSwap */}
-        <div className="glass rounded-3xl border border-white/8 overflow-hidden mb-10">
-          <div className="lg:grid lg:grid-cols-[1fr_1fr]">
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="p-8 lg:p-10 flex flex-col justify-center"
-            >
-              <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#FF2D20] uppercase tracking-[0.2em] mb-3">
-                <span className="w-6 h-px bg-[#FF2D20]" />
-                Portfolio
-              </span>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6">
-                Selected
-                <br />
-                <span className="text-white/30">Projects</span>
-              </h2>
-              <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-8">
-                A curated set of projects spanning web apps, API development, UI/UX design, and interactive experiences.
+      <section id="portfolio" className="section-block border-b border-border">
+        <div className="site-container">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+            <div>
+              <p className="eyebrow mb-4">Portofolio</p>
+              <h2 className="section-title">Sistem production, bukan sekadar demo.</h2>
+            </div>
+            <div>
+              <p className="section-copy">
+                Aplikasi bisnis, commerce, SaaS, integrasi API, dan infrastruktur yang dirancang, dibangun, serta dioperasikan untuk kebutuhan nyata.
               </p>
-              {portfolio.github_url && (
+              {portfolio.github_url ? (
                 <a
                   href={portfolio.github_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 w-fit rounded-full border border-white/10 hover:border-[#FF2D20]/40 text-sm text-gray-300 hover:text-white transition-all bg-white/5 cursor-pointer"
+                  className="focus-ring mt-5 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-primary hover:underline"
                 >
-                  <GithubIcon className="w-4 h-4" />
-                  View all on GitHub
+                  <GithubIcon className="size-4" aria-hidden="true" />
+                  Lihat GitHub
+                  <ArrowUpRight className="size-4" aria-hidden="true" />
                 </a>
-              )}
-            </motion.div>
+              ) : null}
+            </div>
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden lg:block relative min-h-[420px]"
-            >
-              <CardSwap
-                width={560}
-                height={340}
-                cardDistance={52}
-                verticalDistance={60}
-                delay={3500}
-              >
-                {featured.map((project, i) => (
-                  <Card
-                    key={i}
-                    style={{}} 
-                    className="overflow-hidden flex flex-col portfolio-swap-card"
+          <div className="mt-12 overflow-x-auto border-y border-border py-3 lg:sticky lg:top-18 lg:z-30 lg:bg-background" aria-label="Filter proyek">
+            <div className="flex min-w-max gap-2">
+              {portfolio.categories.map((category) => {
+                const selectedCategory = active === category.filter
+                return (
+                  <button
+                    key={category.filter}
+                    type="button"
+                    onClick={() => {
+                      if (selectedCategory) return
+                      const url = new URL(window.location.href)
+                      if (category.filter === "all") url.searchParams.delete("category")
+                      else url.searchParams.set("category", category.filter)
+                      window.history.pushState(null, "", url)
+                      setActive(category.filter)
+                      setVisibleCount(9)
+                    }}
+                    aria-pressed={selectedCategory}
+                    className={`focus-ring min-h-10 rounded-md px-3 text-sm font-medium transition-colors duration-200 ${
+                      selectedCategory
+                        ? "bg-foreground text-background"
+                        : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                    }`}
                   >
-                    <div className="overflow-hidden bg-white/5 flex-1">
-                      <img
-                        src={assetPath(project.image)}
-                        alt={project.title}
-                        className="w-full h-full object-cover object-top"
-                        onError={(e) => { e.currentTarget.style.display = "none" }}
-                      />
-                    </div>
-                    <div className="p-4 space-y-2">
-                      <div className="flex items-start justify-between gap-2">
-                        <h4 className="font-black text-white text-sm leading-tight line-clamp-1">{project.title}</h4>
-                        <span className="shrink-0 px-2 py-0.5 rounded-full bg-white/8 text-[10px] font-semibold text-gray-400 capitalize border border-white/10">
-                          {project.category}
-                        </span>
-                      </div>
-                      <div className="flex flex-wrap gap-1 pt-0.5">
-                        {project.technologies.slice(0, 3).map((tech, j) => (
-                          <span key={j} className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-white/5 border border-white/8 text-gray-400">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </CardSwap>
-            </motion.div>
+                    {category.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
 
+          <div id="project-grid" className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {visibleProjects.map((project) => (
+              <article key={project.title} className="content-auto group min-w-0">
+                <button
+                  type="button"
+                  onClick={() => setSelected(project)}
+                  aria-haspopup="dialog"
+                  className="focus-ring flex h-full w-full flex-col rounded-lg text-left"
+                >
+                  <div className="w-full overflow-hidden rounded-lg border border-border bg-card">
+                    <ProjectVisual
+                      project={project}
+                      className="aspect-video w-full object-cover object-top transition-opacity duration-200 group-hover:opacity-90"
+                    />
+                  </div>
+                  <div className="flex w-full flex-1 flex-col pt-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
+                      {categoryLabel(project.category)}
+                    </p>
+                    <h3 className="mt-2 text-lg font-semibold leading-snug text-balance">{project.title}</h3>
+                    {project.role ? (
+                      <p className="mt-1 text-sm font-medium text-muted-foreground">{project.role}</p>
+                    ) : null}
+                    <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                      {project.description}
+                    </p>
+                    <div className="mt-4 flex flex-wrap items-center gap-1.5">
+                      {project.technologies.slice(0, 4).map((technology) => (
+                        <Badge key={technology} variant="outline" className="h-auto rounded-sm bg-transparent px-2 py-1 text-xs font-normal text-muted-foreground">
+                          {technology}
+                        </Badge>
+                      ))}
+                      {project.technologies.length > 4 ? (
+                        <span className="px-1 text-xs text-muted-foreground">
+                          +{project.technologies.length - 4} lainnya
+                        </span>
+                      ) : null}
+                    </div>
+                    <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-primary">
+                      Lihat detail
+                      <ArrowUpRight className="size-4" aria-hidden="true" />
+                    </span>
+                  </div>
+                </button>
+              </article>
+            ))}
+          </div>
+          {remaining > 0 ? (
+            <div className="mt-12 text-center">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((count) => count + 9)}
+                aria-controls="project-grid"
+                className="focus-ring inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-5 py-2.5 text-sm font-semibold transition-colors duration-200 hover:border-primary hover:text-primary"
+              >
+                Tampilkan {Math.min(9, remaining)} proyek lagi
+              </button>
+              <p aria-live="polite" className="mt-2 text-xs text-muted-foreground">
+                {visibleProjects.length} dari {filtered.length} proyek
+              </p>
+            </div>
+          ) : null}
+        </div>
+      </section>
+
+      {selected ? (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6">
+          <button
+            type="button"
+            onClick={() => setSelected(null)}
+            aria-hidden="true"
+            tabIndex={-1}
+            className="absolute inset-0 bg-black/75"
+          />
+          <div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-dialog-title"
+            aria-describedby="project-dialog-description"
+            className="portfolio-dialog relative flex max-h-[calc(100svh-1.5rem)] w-full max-w-3xl flex-col overflow-hidden rounded-xl sm:max-h-[calc(100svh-3rem)]"
+          >
+            <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-3 sm:px-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
+                {categoryLabel(selected.category)}
+              </p>
+              <button
+                ref={closeButtonRef}
+                type="button"
+                onClick={() => setSelected(null)}
+                aria-label="Tutup detail proyek"
+                className="focus-ring flex size-10 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors duration-200 hover:text-foreground"
+              >
+                <X className="size-4" aria-hidden="true" />
+              </button>
+            </div>
+
+            <div tabIndex={0} className="focus-ring min-h-0 overflow-y-auto overscroll-contain">
+              <div className="p-5 sm:p-7">
+                <h3 id="project-dialog-title" className="font-heading text-2xl leading-tight text-balance sm:text-3xl">
+                  {selected.title}
+                </h3>
+                {selected.role ? (
+                  <p className="mt-2 text-sm font-medium text-muted-foreground">{selected.role}</p>
+                ) : null}
+                <p id="project-dialog-description" className="mt-5 text-sm leading-relaxed text-muted-foreground text-pretty">
+                  {selected.description}
+                </p>
+
+                {selected.responsibilities?.length ? (
+                  <div className="mt-6">
+                    <h4 className="text-xs font-semibold uppercase tracking-[0.12em]">Kontribusi Utama</h4>
+                    <ul className="mt-2 divide-y divide-border border-y border-border">
+                      {selected.responsibilities.map((responsibility) => (
+                        <li key={responsibility} className="py-2.5 text-sm leading-relaxed text-muted-foreground">
+                          {responsibility}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+
+                <div className="mt-6">
+                  <h4 className="text-xs font-semibold uppercase tracking-[0.12em]">Teknologi</h4>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {selected.technologies.map((technology) => (
+                      <Badge key={technology} variant="outline" className="h-auto rounded-sm bg-transparent px-2 py-1 text-xs font-normal text-muted-foreground">
+                        {technology}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                {selected.link && selected.link !== "#" ? (
+                  <a
+                    href={selected.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="focus-ring mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
+                  >
+                    Buka Proyek
+                    <ArrowUpRight className="size-4" aria-hidden="true" />
+                  </a>
+                ) : null}
+              </div>
+
+              {selected.image ? (
+                <div className="border-t border-border bg-secondary p-3 sm:p-5">
+                  <div className="overflow-hidden rounded-md border border-border bg-card">
+                    <ProjectVisual project={selected} className="block h-auto w-full" />
+                  </div>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
-
-        {/* Row 2 — Filter + Project grid */}
-        <div>
-          <motion.div
-            className="flex flex-wrap gap-2 mb-10"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <button
-              onClick={() => setActive("all")}
-              className={`px-4 py-2 rounded-full text-sm font-medium border transition-all cursor-pointer ${
-                active === "all"
-                  ? "bg-[#FF2D20]/15 border-[#FF2D20]/40 text-[#FF2D20]"
-                  : "glass border-white/10 text-gray-400 hover:text-white hover:border-white/20"
-              }`}
-            >
-              All
-            </button>
-            {portfolio.categories.filter((c) => c.filter !== "all").map((cat) => (
-              <button
-                key={cat.filter}
-                onClick={() => setActive(cat.filter)}
-                className={`px-4 py-2 rounded-full text-sm font-medium border transition-all cursor-pointer ${
-                  active === cat.filter
-                    ? "bg-[#FF2D20]/15 border-[#FF2D20]/40 text-[#FF2D20]"
-                    : "glass border-white/10 text-gray-400 hover:text-white hover:border-white/20"
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </motion.div>
-
-          <AnimatePresence mode="popLayout">
-            <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {filtered.map((project, i) => (
-                <motion.div
-                  key={project.title}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.35, delay: i * 0.05 }}
-                  whileHover={{ y: -4 }}
-                  className="group cursor-pointer"
-                  onClick={() => setSelected(project)}
-                >
-                  <div className="h-full glass rounded-2xl border border-white/8 hover:border-white/18 overflow-hidden transition-colors">
-                    <div className="relative overflow-hidden aspect-video bg-white/3">
-                      <img
-                        src={assetPath(project.image)}
-                        alt={project.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none"
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 gap-2">
-                        {project.link && project.link !== "#" && (
-                          <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-8 h-8 rounded-full bg-white/15 backdrop-blur border border-white/20 flex items-center justify-center text-white hover:bg-[#FF2D20]/80 hover:border-[#FF2D20] transition-colors cursor-pointer"
-                          >
-                            <ExternalLink className="w-3.5 h-3.5" />
-                          </a>
-                        )}
-                      </div>
-                      <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/8 backdrop-blur text-[10px] font-semibold text-gray-300 capitalize border border-white/10">
-                        {project.category}
-                      </span>
-                    </div>
-
-                    <div className="p-5 space-y-3">
-                      <h3 className="font-black text-white leading-tight line-clamp-1">{project.title}</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed line-clamp-2">{project.description}</p>
-                      <div className="flex flex-wrap gap-1.5 pt-1">
-                        {project.technologies.slice(0, 4).map((tech, j) => (
-                          <span
-                            key={j}
-                            className="px-2 py-0.5 rounded-full text-[10px] font-medium glass border border-white/8 text-gray-400"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                        {project.technologies.length > 4 && (
-                          <span className="px-2 py-0.5 rounded-full text-[10px] font-medium glass border border-white/8 text-gray-500">
-                            +{project.technologies.length - 4}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-      </div>
-    </section>
-
-    <AnimatePresence>
-      {selected && (
-        <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          onClick={() => setSelected(null)}
-        >
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-
-          <motion.div
-            className="relative w-[92vw] sm:w-[80vw] sm:h-[80vh] portfolio-dialog overflow-hidden rounded-2xl flex flex-col sm:grid sm:grid-cols-[8fr_4fr]"
-            initial={{ scale: 0.88, opacity: 0, y: 24 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.88, opacity: 0, y: 24 }}
-            transition={{ type: "spring", stiffness: 320, damping: 28 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setSelected(null)}
-              className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-black/50 backdrop-blur border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:bg-black/70 transition-colors cursor-pointer"
-            >
-              <X className="w-4 h-4" />
-            </button>
-
-            <div className="relative bg-white/5 overflow-hidden h-48 sm:h-auto shrink-0">
-              <img
-                src={assetPath(selected.image)}
-                alt={selected.title}
-                className="absolute inset-0 w-full h-full object-cover object-top"
-                onError={(e) => { e.currentTarget.style.display = "none" }}
-              />
-            </div>
-
-            <div className="p-5 sm:p-6 space-y-4 flex flex-col justify-center overflow-y-auto flex-1">
-              <div className="flex items-start justify-between gap-3 pr-8">
-                <h3 className="font-black text-white text-lg leading-tight">{selected.title}</h3>
-                <span className="shrink-0 px-2.5 py-1 rounded-full bg-white/8 text-[10px] font-semibold text-gray-400 capitalize border border-white/10 mt-0.5">
-                  {selected.category}
-                </span>
-              </div>
-
-              <p className="text-sm text-gray-400 leading-relaxed">{selected.description}</p>
-
-              <div className="flex flex-wrap gap-1.5">
-                {selected.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="px-2.5 py-1 rounded-full text-[11px] font-medium glass border border-white/8 text-gray-400"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              {selected.link && selected.link !== "#" && (
-                <a
-                  href={selected.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 w-fit rounded-xl bg-gradient-to-r from-[#FF2D20] to-orange-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity cursor-pointer"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  View Project
-                </a>
-              )}
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+      ) : null}
     </>
   )
 }

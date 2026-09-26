@@ -2,7 +2,7 @@
   "personal_info": {
     "name": "Muhammad Syarif Setiadi",
     "title": "Senior Software Engineer & Full-Stack Developer",
-    "avatar": "./assets/images/my-avatar-2.jpg",
+    "avatar": "./assets/images/muhammad-syarif-profile-2026.jpeg",
     "contact": {
       "email": "m.syarifsetiadi.freelancer@gmail.com",
       "phone": "+6289662279662",
@@ -25,7 +25,7 @@
     ]
   },
   "about": {
-    "text": "Saya adalah Senior Software Engineer dan Full-Stack Developer dengan pengalaman lebih dari lima tahun membangun aplikasi bisnis, platform e-commerce, sistem SaaS, dashboard analitik, serta integrasi API. Saya menangani pengembangan secara end-to-end, mulai dari system design, backend, frontend, database, deployment, hingga operasional server production. Fokus saya adalah menghasilkan software yang aman, mudah dipelihara, dan benar-benar membantu proses bisnis pengguna.",
+    "text": "Saya adalah Senior Software Engineer dan Full-Stack Developer dengan pengalaman lebih dari lima tahun dan lebih dari 50 proyek di bidang e-commerce, finance, manufaktur, platform belajar, AI, dan automation. Saya menangani pengembangan secara end-to-end, mulai dari system design, backend, frontend, database, integrasi API, deployment, hingga operasional server production. Fokus saya adalah menghasilkan software yang aman, mudah dipelihara, dan benar-benar membantu proses bisnis pengguna.",
     "quick_stats": [
       { "value": "5+", "label": "Tahun Pengalaman", "color": "text-blue-400" },
       { "value": "Full-Stack", "label": "Cakupan Teknis", "color": "text-green-400" },
@@ -40,7 +40,7 @@
       { "icon": "rocket", "label": "Delivery ke Production", "color": "text-orange-400" },
       { "icon": "coffee", "label": "Belajar Berkelanjutan", "color": "text-amber-400" }
     ],
-    "freelance_status": "Available"
+    "freelance_status": "Tersedia untuk diskusi proyek"
   },
   "what_i_am_doing": [
     {
@@ -93,7 +93,7 @@
       "logo": "./assets/images/naturalva-herba-indonesia.png"
     },
     {
-      "name": "majoring in informatics engineering, Sunan Gunung Djati Islamic University Bandung",
+      "name": "Teknik Informatika UIN Sunan Gunung Djati Bandung",
       "link": "https://if.uinsgd.ac.id",
       "logo": "./assets/images/teknik-informatika-uin.png"
     },
@@ -103,7 +103,7 @@
       "logo": "./assets/images/tamam.png"
     },
     {
-      "name": "Dinas Ketenaga Kerjaan Ciamis",
+      "name": "Dinas Ketenagakerjaan Ciamis",
       "link": "https://disnaker.ciamiskab.go.id/",
       "logo": "./assets/images/disnaker.png"
     },
@@ -111,19 +111,24 @@
       "name": "digitiket",
       "link": "https://digitiket.com/",
       "logo": "./assets/images/digitiket.png"
+    },
+    {
+      "name": "Kejaksaan Agung Republik Indonesia",
+      "link": "https://www.kejaksaan.go.id/",
+      "logo": "./assets/images/kejaksaan-agung.png"
     }
   ],
   "resume": {
     "education": [
       {
-        "school": "State Islamic University of Sunan Gunung Djati Bandung",
+        "school": "UIN Sunan Gunung Djati Bandung",
         "years": "2019 — 2025",
-        "description": "majored in Informatics Engineering."
+        "description": "Sarjana Teknik Informatika (S.T.)."
       },
       {
         "school": "Madrasah Aliyah Negeri 2 Ciamis",
         "years": "2016 — 2019",
-        "description": "studying science majors"
+        "description": "Peminatan Ilmu Pengetahuan Alam."
       },
       {
         "school": "Madrasah Tsanawiyah Negeri 1 Cijeungjing",
@@ -133,34 +138,46 @@
     ],
     "experience": [
       {
-        "position": "Fullstack Web Developer",
+        "position": "Senior Software Engineer",
         "company": "PT Naturalva Herba Indonesia",
-        "years": "2023 - 2025",
-        "description": "As a Full Stack Developer at PT Naturalva Herba Indonesia, I was responsible for designing, developing, and maintaining various web-based systems to support business operations. My portfolio includes building a centralized marketplace management system, developing the SICIVA application for inventory and distribution, and creating the Main Dashboard for real-time sales analytics using Laravel and PostgreSQL. I also integrated third-party APIs for e-commerce platforms, managed infrastructure with a DevOps approach, and ensured system scalability and security. These projects enhanced my skills in backend and frontend development, API integration, and cloud server management, contributing to the company's digital transformation and operational efficiency."
+        "years": "Jun 2025 - Sekarang",
+        "description": "Memimpin pengembangan dan modernisasi sistem penjualan, operasional, finance, manufaktur, customer care, serta analitik. Menangani perancangan arsitektur, code review, mentoring, technical planning, deployment, monitoring, dan penyelesaian masalah production bersama stakeholder."
       },
       {
-        "position": "Fullstack Web Developer",
-        "company": "Web Profile Informatics Engineering",
-        "years": "2023",
-        "description": "While involved in the Informatics Engineering Web Profile project at UIN Sunan Gunung Djati Bandung, I have had extraordinary experiences. In this project, I contributed to the development of a website featuring information about our course, faculty, and teaching staff. I am involved in designing layouts, implementing interactive features, and optimizing website performance. During this process, I learned a lot about web development, teamwork and effective communication with other team members. This experience has enhanced my understanding of informatics engineering and given me the confidence to face future web development challenges."
+        "position": "Full-Stack Developer",
+        "company": "PT Naturalva Herba Indonesia",
+        "years": "Agu 2023 - Jun 2025",
+        "description": "Mengembangkan aplikasi marketplace, order management, CRM, inventory, finance, periklanan, affiliate, dan dashboard realtime. Membangun integrasi marketplace, iklan, WhatsApp, payment gateway, serta mengelola deployment dan infrastruktur server Linux production."
       },
       {
-        "position": "Frontend Developer",
-        "company": "Tamam",
-        "years": "2023",
-        "description": "While participating in Tamam's Web Game project, I have had an interesting and satisfying adventure. From the planning phase to implementation, I was involved in every stage of the game's development. I work alongside a talented and dedicated team, who helped me learn a lot about game design, coding and project management. On this journey, I faced challenges that fueled my creative and problem-solving abilities. With solid teamwork, we have succeeded in creating an interesting and entertaining game, and seeing the positive response from users is the biggest reward for our hard work. This experience has broadened my horizons and skills in the field of web game development, and I look forward to being involved in similar projects in the future."
+        "position": "Full-Stack Developer (Remote)",
+        "company": "Kejaksaan Republik Indonesia",
+        "years": "Agu 2024 - Okt 2024",
+        "description": "Mengembangkan fitur SIASN, pemilihan eselon, dan peta jabatan untuk pengelolaan data serta struktur organisasi. Menyiapkan ekspor PDF, Excel, dan DOC untuk administrasi dan pelaporan."
       },
       {
-        "position": "Backend Developer",
+        "position": "Frontend Engineer",
+        "company": "Project Penelitian Aplikasi Tamam Informatika",
+        "years": "Feb 2023 - Apr 2023",
+        "description": "Merancang antarmuka aplikasi game berbasis web dan mengintegrasikannya dengan modul machine learning."
+      },
+      {
+        "position": "Full-Stack Developer",
+        "company": "UIN Sunan Gunung Djati Bandung",
+        "years": "Apr 2022 - Jan 2023",
+        "description": "Mengembangkan website profil Teknik Informatika yang memuat informasi program studi, dosen, dan sumber daya akademik."
+      },
+      {
+        "position": "Backend Engineer Intern",
         "company": "Digitiket.com",
-        "years": "2022",
-        "description": "While involved in the Digitiket e-commerce Restful API project, I have had a great experience. In this project, I'm responsible for designing and developing an API that enables seamless interaction between e-commerce applications and backend systems. I collaborate with a dedicated and experienced team, and work with various technologies and frameworks such as Lumen, and MySQL. I was involved in implementing key features such as user management, scheduling and ticket management, and payment integration. During this process, I successfully faced technical challenges and gained a deeper understanding of API architecture and good development practices. This experience has enhanced my skills in Restful API development and provided a solid foundation for the development of reliable and efficient e-commerce systems in the future."
+        "years": "Jul 2022 - Des 2022",
+        "description": "Merancang dan mengembangkan REST API berbasis Lumen dan MySQL untuk platform ticketing. Mengimplementasikan user management, penjadwalan, pengelolaan tiket, serta integrasi pembayaran dengan kontrak API yang terstruktur."
       },
       {
-        "position": "Web Developer",
+        "position": "Freelance Web Developer",
         "company": "Dinas Ketenaga Kerjaan Ciamis",
-        "years": "2021",
-        "description": "Selama terlibat dalam proyek pengembangan website Dinas Ketenagakerjaan Ciamis, saya memiliki pengalaman yang luar biasa. Dalam perjalanan ini, saya mendapatkan kesempatan untuk bekerja dengan tim yang berdedikasi dan profesional, yang membantu saya memperluas pengetahuan dan keterampilan dalam bidang pengembangan web. Saya terlibat dalam merancang tata letak yang intuitif dan responsif, mengimplementasikan fitur-fitur yang diperlukan, serta melakukan uji coba dan pemeliharaan untuk memastikan kualitas dan kinerja yang optimal. Selama proses ini, saya juga belajar beradaptasi dengan perubahan dan tantangan yang muncul, serta bekerja sama dengan pihak Dinas Ketenagakerjaan Ciamis untuk memastikan website memenuhi kebutuhan dan harapan mereka. Secara keseluruhan, pengalaman saya di proyek ini telah memperkaya pemahaman saya tentang pengembangan web dan memberi saya kepuasan yang besar karena telah berkontribusi dalam meningkatkan akses informasi dan pelayanan kepada masyarakat terkait ketenagakerjaan."
+        "years": "Sep 2021 - Okt 2022",
+        "description": "Mengembangkan website layanan informasi Dinas Ketenagakerjaan Ciamis dengan layout responsif dan fitur yang sesuai kebutuhan pengguna. Menangani implementasi, quality assurance, pemeliharaan, dan koordinasi kebutuhan bersama tim serta stakeholder."
       }
     ]
   },
@@ -192,9 +209,9 @@
   },
   "services": {
     "categories": [
-      { "icon": "layers", "label": "Full Stack Development" },
-      { "icon": "zap", "label": "High Performance" },
-      { "icon": "shield-check", "label": "Secure & Reliable" }
+      { "icon": "layers", "label": "Pengembangan Full-Stack" },
+      { "icon": "zap", "label": "Performa Tinggi" },
+      { "icon": "shield-check", "label": "Aman & Andal" }
     ],
     "stats": [
       { "value": "5+", "label": "Tahun Pengalaman", "color": "text-blue-400" },
@@ -217,17 +234,17 @@
       { "badge": "DB", "label": "Database", "badge_color": "text-green-400", "badge_bg": "from-green-500/20 to-emerald-500/20" }
     ],
     "why_choose_me": [
-      "5+ Years Experience",
-      "Clean Code Practices",
-      "Fast Delivery",
-      "24/7 Support"
+      "Pengalaman lebih dari 5 tahun",
+      "Arsitektur mudah dipelihara",
+      "Delivery end-to-end",
+      "Komunikasi teknis yang jelas"
     ]
   },
   "achievements": [
     {
       "icon": "trophy",
-      "title": "5+ Years Experience",
-      "description": "Professional web development experience across multiple technologies",
+      "title": "5+ Tahun Pengalaman",
+      "description": "Pengalaman profesional membangun aplikasi dengan beragam teknologi",
       "icon_color": "text-yellow-400",
       "bg": "from-yellow-400/30 to-orange-500/30",
       "shadow": "shadow-yellow-500/20",
@@ -236,8 +253,8 @@
     },
     {
       "icon": "code",
-      "title": "50+ Projects",
-      "description": "Successfully completed web applications and websites",
+      "title": "Delivery End-to-End",
+      "description": "Menangani proses dari system design hingga operasional production",
       "icon_color": "text-blue-400",
       "bg": "from-blue-400/30 to-cyan-500/30",
       "shadow": "shadow-blue-500/20",
@@ -246,8 +263,8 @@
     },
     {
       "icon": "users",
-      "title": "Multiple Clients",
-      "description": "Successfully served clients across various industries",
+      "title": "Integrasi Multi-Sistem",
+      "description": "Menghubungkan marketplace, payment, shipping, webhook, dan API eksternal",
       "icon_color": "text-green-400",
       "bg": "from-green-400/30 to-emerald-500/30",
       "shadow": "shadow-green-500/20",
@@ -256,8 +273,8 @@
     },
     {
       "icon": "star",
-      "title": "Laravel Expert",
-      "description": "98% proficiency in Laravel framework development",
+      "title": "Laravel & React",
+      "description": "Pengembangan backend dan frontend untuk aplikasi bisnis modern",
       "icon_color": "text-purple-400",
       "bg": "from-purple-400/30 to-pink-500/30",
       "shadow": "shadow-purple-500/20",
@@ -266,8 +283,8 @@
     },
     {
       "icon": "database",
-      "title": "Database Design",
-      "description": "Expert in MySQL, PostgreSQL & database architecture",
+      "title": "Database Engineering",
+      "description": "Perancangan dan optimasi PostgreSQL, MySQL, serta Redis",
       "icon_color": "text-red-400",
       "bg": "from-red-400/30 to-rose-500/30",
       "shadow": "shadow-red-500/20",
@@ -276,8 +293,8 @@
     },
     {
       "icon": "globe",
-      "title": "Full Stack",
-      "description": "Frontend & backend development expertise",
+      "title": "Production Operations",
+      "description": "Deployment, monitoring, backup, dan troubleshooting server Linux",
       "icon_color": "text-indigo-400",
       "bg": "from-indigo-400/30 to-violet-500/30",
       "shadow": "shadow-indigo-500/20",
@@ -301,7 +318,7 @@
       {
         "title": "Marketplace Commerce Hub",
         "category": "commerce",
-        "image": "./assets/portofolio/app.naturalva.co.id.png",
+        "image": "./assets/portofolio/live/marketplace-nhi.png",
         "link": "https://marketplace.nhi.co.id",
         "role": "Lead Full-Stack & Platform Engineer",
         "description": "Back office terpusat untuk mengelola order, settlement, revenue, cost, affiliate, advertising, master data, RBAC, dan laporan operasional dari beberapa marketplace.",
@@ -329,10 +346,10 @@
       {
         "title": "ParentingAnak Content & Commerce Platform",
         "category": "web",
-        "image": "",
+        "image": "./assets/portofolio/live/parentinganak.png",
         "link": "https://parentinganak.id",
         "role": "Software Architect & Full-Stack Engineer",
-        "description": "Platform konten parenting berbayar untuk video HLS, artikel SEO, ebook, webinar, subscription, dan pembelian produk digital dalam satu codebase multi-domain.",
+        "description": "Platform konten parenting untuk video HLS, artikel SEO, e-book, template mewarnai, webinar, subscription, pembelian produk digital, moderasi, analitik, dan rekomendasi AI dalam satu codebase multi-domain.",
         "responsibilities": [
           "Merancang entitlement untuk subscription, pembelian satuan, dan akses konten.",
           "Membangun pipeline upload S3 dan transcoding video HLS 360p, 720p, serta 1080p.",
@@ -343,7 +360,7 @@
       {
         "title": "Smartup Application Rental Platform",
         "category": "platform",
-        "image": "",
+        "image": "./assets/portofolio/live/smartup.png",
         "link": "https://smartup.id",
         "role": "Full-Stack & Platform Engineer",
         "description": "Platform katalog dan penyewaan aplikasi yang mengotomatisasi cloning service, subdomain, DNS, deployment, progress tracking, paket, serta akses aplikasi client.",
@@ -357,7 +374,7 @@
       {
         "title": "SaaS Management Control Plane",
         "category": "platform",
-        "image": "",
+        "image": "./assets/portofolio/live/saas-platform.png",
         "link": "https://saas.nhi.co.id",
         "role": "Backend & Platform Engineer",
         "description": "Control plane untuk source repository, application catalog, immutable release, build pipeline, subscription, workspace, RBAC, instance settings, dan custom domain.",
@@ -371,7 +388,7 @@
       {
         "title": "Marketplace Integration Gateway",
         "category": "api",
-        "image": "",
+        "image": "./assets/portofolio/live/bridge-smartup.png",
         "link": "https://bridge.smartup.id",
         "role": "Backend & Integration Engineer",
         "description": "Gateway multi-instance untuk OAuth, credential handoff, webhook delivery, request signing, replay protection, dan koneksi seller marketplace yang terisolasi.",
@@ -383,16 +400,16 @@
         "technologies": ["Laravel", "PostgreSQL", "OAuth", "Webhook", "API Signing", "TikTok Shop", "Shopee"]
       },
       {
-        "title": "Finpro & RSLA Procurement Workflow",
+        "title": "FinPro Finance & Operations Platform",
         "category": "business",
-        "image": "",
+        "image": "./assets/portofolio/live/finpro-nhi.png",
         "link": "https://finpro.nhi.co.id",
         "role": "Full-Stack Engineer",
-        "description": "Sistem purchase request dan purchase order dengan prioritas pengajuan, multi-stage approval, sinkronisasi event, audit trail, dan kontrol dokumen keuangan.",
+        "description": "Platform finance dan operasional untuk chart of accounts, jurnal, budgeting, neraca, fixed asset, procurement, inventory, approval, customer, delivery, dan expense management.",
         "responsibilities": [
-          "Merancang flow approval dan sinkronisasi status antara aplikasi sumber, RSLA, dan Finpro.",
-          "Mengembangkan prioritas Urgent, Segera, dan Non Urgent tanpa menghilangkan histori dokumen.",
-          "Membangun interface operasional, webhook processing, validation, dan deployment production."
+          "Membangun alur purchase request dan purchase order dengan prioritas serta persetujuan bertahap.",
+          "Menghubungkan proses pengadaan, inventory, delivery, dan dokumen keuangan.",
+          "Menjaga sinkronisasi status dengan RSLA, audit trail, validasi, serta deployment production."
         ],
         "technologies": ["Laravel", "React", "PostgreSQL", "Workflow", "Webhook", "Audit Trail"]
       },
@@ -413,7 +430,7 @@
       {
         "title": "OpenProject Delivery Platform",
         "category": "platform",
-        "image": "",
+        "image": "./assets/portofolio/live/projects-nhi.png",
         "link": "https://projects.nhi.co.id",
         "role": "Platform & DevOps Engineer",
         "description": "Platform kolaborasi proyek dengan work package, board, Gantt, meeting, time and cost, resource planning, email, serta realtime collaboration.",
@@ -439,11 +456,122 @@
         "technologies": ["Linux", "Docker", "Plesk", "Nginx", "Dokploy", "Cloudflare", "PostgreSQL", "Monitoring"]
       },
       {
+        "title": "OMS Order Management Platform",
+        "category": "commerce",
+        "image": "./assets/portofolio/live/oms-nhi.png",
+        "link": "https://oms.nhi.co.id",
+        "description": "Sistem pengelolaan pesanan dengan landing page builder, embedded form, checkout, pembayaran, invoice, pengiriman, short link, abandoned order, tindak lanjut WhatsApp, dan Meta conversion event.",
+        "technologies": ["Order Management", "Checkout", "Payment Gateway", "WhatsApp", "Meta Conversion API"]
+      },
+      {
+        "title": "Affiliate, Metrics, Retail & Tokopedia Bot",
+        "category": "commerce",
+        "link": "#",
+        "description": "Rangkaian sistem untuk creator dan campaign, scraping, eksekusi TikTok, analitik sosial, performa iklan, metrik livestream dan video, laporan SPG, sell-out, serta otomasi workflow pesanan.",
+        "technologies": ["TikTok", "Meta Ads", "Shopee Ads", "Social Analytics", "Automation"]
+      },
+      {
+        "title": "Manufacturing System",
+        "category": "business",
+        "link": "#",
+        "description": "Sistem produksi dan gudang yang mencakup bill of materials, kebutuhan material, production order, inventory, barcode dan QR code, goods receipt, delivery order, serta integrasi Accurate, Kelola, GreatDay, dan RSLA.",
+        "technologies": ["BOM", "Inventory", "Barcode/QR", "Accurate", "RSLA"]
+      },
+      {
+        "title": "RSLA, NICE & Career Workflows",
+        "category": "business",
+        "link": "#",
+        "description": "Workflow request dan SLA, persetujuan bertingkat, OKR/KPI/BSC, struktur organisasi, rekrutmen, tes online, onboarding, dan metrik tenaga kerja dengan integrasi Google Drive, email, serta WhatsApp.",
+        "technologies": ["Workflow", "OKR/KPI", "Applicant Tracking", "Google Drive", "WhatsApp"]
+      },
+      {
+        "title": "Kita Berdikari & Learning Platform",
+        "category": "web",
+        "image": "./assets/portofolio/live/kitaberdikari.png",
+        "link": "https://kitaberdikari.com",
+        "description": "Platform pembelajaran dan komunitas dengan course, modul, tugas, sertifikat, mentor, membership, event, Google Meet, pencarian Algolia, pembayaran, replay, analitik, dan activity log.",
+        "technologies": ["Learning Management", "Algolia", "Google Meet", "Payment", "Analytics"]
+      },
+      {
+        "title": "Kopdar & Workshop",
+        "category": "web",
+        "link": "#",
+        "description": "Aplikasi event dan komunitas berbasis Next.js untuk pendaftaran, pengalaman interaktif, peta, serta visual 3D.",
+        "technologies": ["Next.js", "Event Registration", "Interactive Map", "3D"]
+      },
+      {
+        "title": "NICE Agentic AI",
+        "category": "platform",
+        "link": "#",
+        "description": "Platform RAG untuk ingestion dokumen, semantic search, riset web, dan browser automation dengan alur agentic AI.",
+        "technologies": ["LangChain", "LangGraph", "OpenAI", "ChromaDB", "FastAPI", "RAG"]
+      },
+      {
+        "title": "WABA & WhatsApp Platform",
+        "category": "platform",
+        "link": "#",
+        "description": "Inbox multi-tim untuk penugasan percakapan, routing SLA, template, media, tag, eskalasi, dan webhook WhatsApp.",
+        "technologies": ["WhatsApp Business API", "OpenWA", "WPPConnect", "MongoDB", "Redis", "Webhook"]
+      },
+      {
+        "title": "9Router & Signal Aggregator",
+        "category": "api",
+        "link": "#",
+        "description": "Gateway AI dan API dengan proxy routing, JWT, visual flow editor, dashboard Next.js, serta agregasi sinyal Discord, Telegram, dan WhatsApp dengan deduplikasi.",
+        "technologies": ["AI Gateway", "JWT", "Next.js", "Discord", "Telegram", "WhatsApp"]
+      },
+      {
+        "title": "Automation Services",
+        "category": "api",
+        "link": "#",
+        "description": "Layanan otomasi untuk Accurate finance API, Google Maps scraper, affiliate broadcast socket, notifikasi realtime, webhook, dan background worker.",
+        "technologies": ["Accurate API", "Google Maps", "WebSocket", "Webhook", "Background Jobs"]
+      },
+      {
+        "title": "SIASN & Peta Jabatan Kejaksaan RI",
+        "category": "business",
+        "link": "#",
+        "role": "Full-Stack Developer (Remote)",
+        "description": "Fitur pengelolaan SIASN, pemilihan eselon, dan peta jabatan untuk data serta struktur organisasi, dilengkapi ekspor PDF, Excel, dan DOC untuk administrasi.",
+        "technologies": ["SIASN", "Organization Data", "PDF", "Excel", "DOC"]
+      },
+      {
+        "title": "iCho & Lily Brand Website",
+        "category": "web",
+        "image": "./assets/portofolio/live/icholily.jpg",
+        "link": "https://icholily.com",
+        "description": "Website iCho & Lily untuk konten dan produk digital parenting, dengan antarmuka responsif serta fokus pada SEO dan performa halaman.",
+        "technologies": ["Responsive UI", "SEO", "Content Platform"]
+      },
+      {
+        "title": "Caladeva Brand Website",
+        "category": "web",
+        "link": "#",
+        "description": "Website brand dengan antarmuka responsif serta fokus pada SEO dan performa halaman.",
+        "technologies": ["Responsive UI", "SEO", "Web Performance"]
+      },
+      {
+        "title": "DigiTiket Ticketing API",
+        "category": "api",
+        "link": "https://digitiket.com",
+        "role": "Backend Engineer Intern",
+        "description": "REST API untuk manajemen pengguna, jadwal, tiket, integrasi pembayaran, rancangan database, dan optimasi query platform ticketing.",
+        "technologies": ["Lumen", "MySQL", "REST API", "Payment Integration"]
+      },
+      {
+        "title": "Website Layanan Informasi Kabupaten Ciamis",
+        "category": "web",
+        "link": "https://disnaker.ciamiskab.go.id/",
+        "role": "Freelance Web Developer",
+        "description": "Website layanan informasi publik yang responsif untuk kebutuhan pengguna dan stakeholder, termasuk pengujian, pemeliharaan, serta penyesuaian fitur.",
+        "technologies": ["Responsive UI", "Public Information", "Web Maintenance"]
+      },
+      {
         "title": "Web Profile - Informatics Engineering",
         "category": "web",
         "image": "./assets/portofolio/if-uinsgd.jpg",
         "link": "https://if.uinsgd.ac.id/",
-        "description": "Web profile website for Informatics Engineering department at UIN Sunan Gunung Djati Bandung, featuring course information, faculty profiles, and academic resources.",
+        "description": "Website profil Program Studi Teknik Informatika UIN Sunan Gunung Djati Bandung yang menyajikan informasi akademik, profil dosen, kurikulum, dan sumber daya mahasiswa.",
         "technologies": ["Laravel", "Vue.js", "MySQL", "Tailwind CSS"]
       },
       {
@@ -451,7 +579,7 @@
         "category": "game",
         "image": "./assets/portofolio/tamam.jpg",
         "link": "http://194.233.91.96:8383/",
-        "description": "Interactive web-based multiplayer game developed collaboratively, featuring real-time gameplay mechanics and engaging user interactions.",
+        "description": "Game multiplayer berbasis web yang dikembangkan secara kolaboratif dengan mekanisme permainan realtime dan interaksi antarpemain.",
         "technologies": ["JavaScript", "HTML5", "CSS3", "PHP"]
       },
       {
@@ -459,7 +587,7 @@
         "category": "web",
         "image": "./assets/portofolio/webinar.jpg",
         "link": "#",
-        "description": "Online webinar management platform for informatics events, supporting registration, scheduling, and live session management.",
+        "description": "Platform pengelolaan webinar Informatika yang mendukung registrasi peserta, penjadwalan acara, dan pengelolaan sesi online.",
         "technologies": ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
       },
       {
@@ -467,7 +595,7 @@
         "category": "web",
         "image": "./assets/portofolio/tokoku.jpg",
         "link": "#",
-        "description": "E-commerce web application for managing online store operations including product management, orders, and customer interactions.",
+        "description": "Aplikasi e-commerce untuk mengelola operasional toko online, termasuk katalog produk, pesanan, dan interaksi pelanggan.",
         "technologies": ["Laravel", "MySQL", "Tailwind CSS", "Alpine.js"]
       },
       {
@@ -475,7 +603,7 @@
         "category": "web",
         "image": "./assets/portofolio/naturalva.png",
         "link": "https://siciva.naturalva.co.id",
-        "description": "Inventory and distribution management system (SICIVA) for PT Naturalva Herba Indonesia, streamlining warehouse operations and real-time stock tracking.",
+        "description": "Sistem inventory dan distribusi PT Naturalva Herba Indonesia untuk menyederhanakan operasional gudang serta pemantauan stok secara realtime.",
         "technologies": ["Laravel", "PostgreSQL", "Vue.js", "Tailwind CSS"]
       },
       {
@@ -483,7 +611,7 @@
         "category": "web",
         "image": "./assets/portofolio/naturalva2.png",
         "link": "https://app.naturalva.co.id",
-        "description": "Centralized marketplace management system integrating TikTok, Shopee, Tokopedia, and Lazada platforms for PT Naturalva Herba Indonesia.",
+        "description": "Sistem pengelolaan marketplace terpusat yang mengintegrasikan TikTok Shop, Shopee, Tokopedia, dan Lazada untuk PT Naturalva Herba Indonesia.",
         "technologies": ["Laravel", "PostgreSQL", "REST API", "Tailwind CSS"]
       },
       {
@@ -491,7 +619,7 @@
         "category": "web",
         "image": "./assets/portofolio/naturalva2.png",
         "link": "https://main.naturalva.co.id",
-        "description": "Real-time sales analytics dashboard providing comprehensive business intelligence and performance monitoring for executive management.",
+        "description": "Dashboard analitik penjualan realtime untuk business intelligence, pemantauan performa, dan pengambilan keputusan manajemen.",
         "technologies": ["Laravel", "PostgreSQL", "Chart.js", "Tailwind CSS"]
       },
       {
@@ -499,7 +627,7 @@
         "category": "web",
         "image": "./assets/portofolio/nutrahasiat.png",
         "link": "https://nutrahasiat.co.id",
-        "description": "Professional company profile website for PT Nutrahasiat International, showcasing products, services, and brand identity with modern design.",
+        "description": "Website company profile PT Nutrahasiat International yang menampilkan produk, layanan, dan identitas brand melalui desain modern dan responsif.",
         "technologies": ["Laravel", "MySQL", "Tailwind CSS", "JavaScript"]
       },
       {
@@ -507,7 +635,7 @@
         "category": "web",
         "image": "./assets/portofolio/app.naturalva.co.id.png",
         "link": "https://app.naturalva.co.id",
-        "description": "Comprehensive data management system for marketplace operations, integrating multiple e-commerce platforms with third-party API synchronization.",
+        "description": "Sistem pengelolaan data marketplace yang menghubungkan beberapa platform e-commerce melalui sinkronisasi API pihak ketiga.",
         "technologies": ["Laravel", "PostgreSQL", "REST API", "Vue.js", "Tailwind CSS"]
       },
       {
@@ -515,7 +643,7 @@
         "category": "web",
         "image": "./assets/portofolio/form tiktok.png",
         "link": "https://noc.nhi.co.id/form/tiktok",
-        "description": "Dynamic form system for TikTok campaign management and data collection, integrated with the internal NOC operations platform.",
+        "description": "Sistem formulir dinamis untuk pengelolaan kampanye dan pengumpulan data TikTok yang terintegrasi dengan platform operasional NOC internal.",
         "technologies": ["Laravel", "JavaScript", "Tailwind CSS"]
       },
       {
@@ -523,7 +651,7 @@
         "category": "web",
         "image": "./assets/portofolio/natcare dashboard.png",
         "link": "https://natcare.naturalva.co.id",
-        "description": "Microservices-based customer care dashboard providing integrated support management, ticketing, and service monitoring capabilities.",
+        "description": "Dashboard customer care berbasis microservices untuk pengelolaan support, ticketing, dan pemantauan layanan secara terintegrasi.",
         "technologies": ["Laravel", "Microservices", "PostgreSQL", "Vue.js", "Tailwind CSS"]
       },
       {
@@ -531,7 +659,7 @@
         "category": "design",
         "image": "./assets/portofolio/natcare login.png",
         "link": "https://natcare.naturalva.co.id",
-        "description": "Modern and responsive authentication interface for the Natcare platform with secure login, registration, and multi-factor authentication support.",
+        "description": "Antarmuka autentikasi Natcare yang modern dan responsif dengan flow login, registrasi, dan dukungan keamanan akun.",
         "technologies": ["Laravel", "Tailwind CSS", "JavaScript"]
       },
       {
@@ -539,7 +667,7 @@
         "category": "web",
         "image": "./assets/portofolio/natcare.png",
         "link": "https://natcare.naturalva.co.id",
-        "description": "Full customer care management platform for handling end-to-end customer support workflows, service requests, and team collaboration.",
+        "description": "Platform customer care untuk menangani workflow dukungan pelanggan, permintaan layanan, dan kolaborasi tim secara end-to-end.",
         "technologies": ["Laravel", "PostgreSQL", "Vue.js", "Tailwind CSS"]
       },
       {
@@ -547,7 +675,7 @@
         "category": "api",
         "image": "./assets/portofolio/noc.png",
         "link": "https://noc.nhi.co.id",
-        "description": "Network Operations Center platform integrating internal API services, marketplace webhooks, and real-time operational monitoring for NHI.",
+        "description": "Platform Network Operations Center yang mengintegrasikan API internal, webhook marketplace, dan pemantauan operasional realtime untuk NHI.",
         "technologies": ["Laravel", "REST API", "PostgreSQL", "JavaScript"]
       },
       {
@@ -555,7 +683,7 @@
         "category": "design",
         "image": "./assets/portofolio/simalva login.png",
         "link": "https://simalva.naturalva.co.id",
-        "description": "Clean and branded login interface for the Simalva ads management system with role-based access control and secure authentication flow.",
+        "description": "Antarmuka login Simalva yang konsisten dengan brand, dilengkapi role-based access control dan flow autentikasi yang aman.",
         "technologies": ["Laravel", "Tailwind CSS", "JavaScript"]
       },
       {
@@ -563,7 +691,7 @@
         "category": "web",
         "image": "./assets/portofolio/simalva.co.id.png",
         "link": "https://simalva.naturalva.co.id",
-        "description": "Unified advertising management system integrating TikTok Ads, Google Ads, and Facebook Ads for centralized campaign performance tracking.",
+        "description": "Sistem pengelolaan iklan terpusat yang mengintegrasikan TikTok Ads, Google Ads, dan Facebook Ads untuk memantau performa kampanye.",
         "technologies": ["Laravel", "PostgreSQL", "TikTok API", "Google Ads API", "Facebook API"]
       },
       {
@@ -571,16 +699,16 @@
         "category": "web",
         "image": "./assets/portofolio/naturalvaherba.co.id.png",
         "link": "https://naturalvaherba.co.id",
-        "description": "Corporate website for PT Naturalva Herba Indonesia featuring product catalog, brand story, and digital presence with SEO optimization.",
+        "description": "Website korporat PT Naturalva Herba Indonesia yang menampilkan katalog produk, profil brand, dan konten yang dioptimalkan untuk SEO.",
         "technologies": ["Laravel", "MySQL", "Tailwind CSS", "JavaScript"]
       },
       {
-        "title": "naic.nhi.co.id",
+        "title": "NAIC & Trading Automation",
         "category": "web",
         "image": "./assets/portofolio/naic.png",
         "link": "https://naic.nhi.co.id",
-        "description": "Internal business application for NHI with integrated modules for managing company operations, employee data, and operational workflows.",
-        "technologies": ["Laravel", "PostgreSQL", "Tailwind CSS", "Alpine.js"]
+        "description": "Dashboard market, finance, dan PNL dengan AI Trade Planner, integrasi Bitget API, Degen Screener, RugCheck, antarmuka DeFi, serta otomasi copy-trading DEX.",
+        "technologies": ["AI Trade Planner", "Bitget API", "DeFi", "DEX", "Trading Automation"]
       }
     ]
   },
@@ -618,6 +746,6 @@
       "email",
       "message"
     ],
-    "form_btn_text": "Send Message"
+    "form_btn_text": "Kirim melalui Email"
   }
 }

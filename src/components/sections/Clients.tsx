@@ -1,11 +1,9 @@
-"use client"
-
-import { motion } from "framer-motion"
+import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
 import type { PortfolioJSON } from "@/types/portfolio"
-import LogoLoop, { type LogoItem } from "@/components/ui/LogoLoop"
 
-function assetPath(p: string) {
-  return p.replace(/^\.\//, "/")
+function assetPath(path: string) {
+  return path.replace(/^\.\//, "/")
 }
 
 interface ClientsProps {
@@ -13,74 +11,46 @@ interface ClientsProps {
 }
 
 export default function Clients({ data }: ClientsProps) {
-  if (!data.clients || data.clients.length === 0) return null
-
-  const logos: LogoItem[] = data.clients.map((client) =>
-    client.logo
-      ? {
-          node: (
-            <img
-              src={assetPath(client.logo)}
-              alt={client.name}
-              title={client.name}
-              className="h-14 w-14 rounded-xl object-cover border border-white/10"
-              loading="lazy"
-              draggable={false}
-            />
-          ),
-          title: client.name,
-          href: client.link ?? undefined,
-        }
-      : {
-          node: (
-            <span className="text-sm font-semibold text-gray-400 whitespace-nowrap">
-              {client.name}
-            </span>
-          ),
-          title: client.name,
-          href: client.link ?? undefined,
-        }
-  )
+  if (!data.clients?.length) return null
 
   return (
-    <section id="clients" className="py-12 relative">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 text-center"
-        >
-          <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#FF2D20] uppercase tracking-[0.2em] mb-3">
-            <span className="w-6 h-px bg-[#FF2D20]" />
-            Clients
-            <span className="w-6 h-px bg-[#FF2D20]" />
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight">
-            Trusted By
-            <span className="text-white/30"> Amazing Clients</span>
-          </h2>
-        </motion.div>
+    <section id="clients" className="section-block border-b border-border">
+      <div className="site-container">
+        <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div>
+            <p className="eyebrow mb-4">Kolaborasi</p>
+            <h2 className="section-title">Dipercaya lintas organisasi.</h2>
+          </div>
+          <p className="section-copy max-w-md">
+            Beberapa organisasi dan tim yang pernah berkolaborasi dalam pengembangan produk digital.
+          </p>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="overflow-hidden"
-        >
-          <LogoLoop
-            logos={logos}
-            speed={70}
-            direction="left"
-            logoHeight={56}
-            gap={64}
-            hoverSpeed={0}
-            scaleOnHover
-            ariaLabel="Trusted clients"
-          />
-        </motion.div>
+        <ul className="mt-12 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
+          {data.clients.map((client) => (
+            <li key={client.name} className="border-b border-r border-border">
+              <a
+                href={client.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="focus-ring group flex min-h-32 items-center gap-4 p-5 transition-colors duration-200 hover:bg-card"
+              >
+                {client.logo ? (
+                  <Image
+                    src={assetPath(client.logo)}
+                    alt=""
+                    width={56}
+                    height={56}
+                    sizes="56px"
+                    className="size-14 rounded-lg border border-border bg-card object-contain p-1 grayscale transition-[filter] duration-200 group-hover:grayscale-0"
+                  />
+                ) : null}
+                <span className="min-w-0 flex-1 text-sm font-semibold leading-snug">{client.name}</span>
+                <ArrowUpRight className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

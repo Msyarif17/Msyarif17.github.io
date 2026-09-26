@@ -7,18 +7,20 @@ import Clients from "@/components/sections/Clients"
 import Resume from "@/components/sections/Resume"
 import Skills from "@/components/sections/Skills"
 import Portfolio from "@/components/sections/Portfolio"
-import Blog from "@/components/sections/Blog"
 import Contact from "@/components/sections/Contact"
 import Footer from "@/components/sections/Footer"
 import type { PortfolioJSON } from "@/types/portfolio"
 
-const data = portfolioData as unknown as PortfolioJSON
+const data = portfolioData as PortfolioJSON
 
 export default function Home() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden relative bg-white dark:bg-black">
+    <div className="min-h-screen bg-background text-foreground">
+      <a href="#main-content" className="skip-link">
+        Lewati ke konten utama
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero data={data} />
         <About data={data} />
         <Services data={data} />
@@ -26,7 +28,6 @@ export default function Home() {
         <Resume data={data} />
         <Skills data={data} />
         <Portfolio data={data} />
-        {/* <Blog data={data} /> */}
         <Contact data={data} />
       </main>
       <Footer data={data} />
