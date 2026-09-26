@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import { Menu, Moon, Sun, X } from "lucide-react"
 
 const navItems = [
@@ -58,9 +59,7 @@ export default function Navbar() {
             className="focus-ring inline-flex items-center gap-3 rounded-lg"
             onClick={() => setMobileOpen(false)}
           >
-            <span className="flex size-9 items-center justify-center rounded-md bg-foreground text-xs font-bold tracking-wider text-background">
-              MS
-            </span>
+            <Image src="/icon.svg" alt="" width={36} height={36} className="size-9 shrink-0" />
             <span className="text-sm font-semibold tracking-tight">Muhammad Syarif</span>
           </a>
 

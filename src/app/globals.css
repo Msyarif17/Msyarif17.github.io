@@ -185,11 +185,6 @@
   translate: 0;
 }
 
-.content-auto {
-  content-visibility: auto;
-  contain-intrinsic-size: 420px;
-}
-
 .portfolio-dialog {
   background: var(--card);
   border: 1px solid var(--border);

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { ArrowUp } from "lucide-react"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { GithubIcon, LinkedinIcon, WhatsappIcon } from "@/components/ui/social-icons"
@@ -30,9 +31,7 @@ export default function Footer({ data }: FooterProps) {
         <BlurFade inView className="grid gap-10 md:grid-cols-[1.3fr_0.7fr_0.7fr]">
           <div>
             <a href="#home" className="focus-ring inline-flex items-center gap-3 rounded-lg">
-              <span className="flex size-9 items-center justify-center rounded-md bg-foreground text-xs font-bold tracking-wider text-background">
-                MS
-              </span>
+              <Image src="/icon.svg" alt="" width={36} height={36} className="size-9 shrink-0" />
               <span className="font-semibold">Muhammad Syarif Setiadi</span>
             </a>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">

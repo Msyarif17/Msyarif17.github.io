@@ -173,7 +173,7 @@ export default function Portfolio({ data }: PortfolioProps) {
           <BlurFade inView delay={0.08} className="mt-10">
             <div id="project-grid" className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {visibleProjects.map((project) => (
-                <article key={project.title} className="content-auto group min-w-0">
+                <article key={project.title} className="group min-w-0">
                   <button
                     type="button"
                     onClick={() => setSelected(project)}
